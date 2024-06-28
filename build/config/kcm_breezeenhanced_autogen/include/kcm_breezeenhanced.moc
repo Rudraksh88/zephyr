@@ -1,0 +1,203 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'kcm_breezeenhanced.cpp'
+**
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.7.2)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <QtCore/qmetatype.h>
+#include <QtCore/qplugin.h>
+
+#include <QtCore/qtmochelpers.h>
+
+#include <memory>
+
+
+#include <QtCore/qxptype_traits.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'kcm_breezeenhanced.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.7.2. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
+#endif
+
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+QT_WARNING_DISABLE_GCC("-Wuseless-cast")
+namespace {
+
+#ifdef QT_MOC_HAS_STRINGDATA
+struct qt_meta_stringdata_CLASSkcm_breezeenhanced_factoryENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSkcm_breezeenhanced_factoryENDCLASS = QtMocHelpers::stringData(
+    "kcm_breezeenhanced_factory"
+);
+#else  // !QT_MOC_HAS_STRINGDATA
+#error "qtmochelpers.h not found or too old."
+#endif // !QT_MOC_HAS_STRINGDATA
+} // unnamed namespace
+
+Q_CONSTINIT static const uint qt_meta_data_CLASSkcm_breezeenhanced_factoryENDCLASS[] = {
+
+ // content:
+      12,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+Q_CONSTINIT const QMetaObject kcm_breezeenhanced_factory::staticMetaObject = { {
+    QMetaObject::SuperData::link<KPluginFactory::staticMetaObject>(),
+    qt_meta_stringdata_CLASSkcm_breezeenhanced_factoryENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSkcm_breezeenhanced_factoryENDCLASS,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSkcm_breezeenhanced_factoryENDCLASS_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<kcm_breezeenhanced_factory, std::true_type>
+    >,
+    nullptr
+} };
+
+void kcm_breezeenhanced_factory::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    (void)_o;
+    (void)_id;
+    (void)_c;
+    (void)_a;
+}
+
+const QMetaObject *kcm_breezeenhanced_factory::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *kcm_breezeenhanced_factory::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSkcm_breezeenhanced_factoryENDCLASS.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "org.kde.KPluginFactory"))
+        return static_cast< KPluginFactory*>(this);
+    return KPluginFactory::qt_metacast(_clname);
+}
+
+int kcm_breezeenhanced_factory::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = KPluginFactory::qt_metacall(_c, _id, _a);
+    return _id;
+}
+
+#ifdef QT_MOC_EXPORT_PLUGIN_V2
+static constexpr unsigned char qt_pluginMetaDataV2_kcm_breezeenhanced_factory[] = {
+    0xbf, 
+    // "IID"
+    0x02,  0x76,  'o',  'r',  'g',  '.',  'k',  'd', 
+    'e',  '.',  'K',  'P',  'l',  'u',  'g',  'i', 
+    'n',  'F',  'a',  'c',  't',  'o',  'r',  'y', 
+    // "className"
+    0x03,  0x78,  0x1a,  'k',  'c',  'm',  '_',  'b', 
+    'r',  'e',  'e',  'z',  'e',  'e',  'n',  'h', 
+    'a',  'n',  'c',  'e',  'd',  '_',  'f',  'a', 
+    'c',  't',  'o',  'r',  'y', 
+    // "MetaData"
+    0x04,  0xa4,  0x67,  'K',  'P',  'l',  'u',  'g', 
+    'i',  'n',  0xa4,  0x6b,  'D',  'e',  's',  'c', 
+    'r',  'i',  'p',  't',  'i',  'o',  'n',  0x78, 
+    0x2b,  'M',  'o',  'd',  'i',  'f',  'y',  ' ', 
+    't',  'h',  'e',  ' ',  'a',  'p',  'p',  'e', 
+    'a',  'r',  'a',  'n',  'c',  'e',  ' ',  'o', 
+    'f',  ' ',  'w',  'i',  'n',  'd',  'o',  'w', 
+    ' ',  'd',  'e',  'c',  'o',  'r',  'a',  't', 
+    'i',  'o',  'n',  's',  0x64,  'I',  'c',  'o', 
+    'n',  0x78,  0x1a,  'p',  'r',  'e',  'f',  'e', 
+    'r',  'e',  'n',  'c',  'e',  's',  '-',  's', 
+    'y',  's',  't',  'e',  'm',  '-',  'w',  'i', 
+    'n',  'd',  'o',  'w',  's',  0x64,  'N',  'a', 
+    'm',  'e',  0x78,  0x20,  'B',  'r',  'e',  'e', 
+    'z',  'e',  'E',  'n',  'h',  'a',  'n',  'c', 
+    'e',  'd',  ' ',  'W',  'i',  'n',  'd',  'o', 
+    'w',  ' ',  'D',  'e',  'c',  'o',  'r',  'a', 
+    't',  'i',  'o',  'n',  0x6c,  'S',  'e',  'r', 
+    'v',  'i',  'c',  'e',  'T',  'y',  'p',  'e', 
+    's',  0x81,  0x68,  'K',  'C',  'M',  'o',  'd', 
+    'u',  'l',  'e',  0x6e,  'X',  '-',  'K',  'D', 
+    'E',  '-',  'K',  'e',  'y',  'w',  'o',  'r', 
+    'd',  's',  0x78,  0x19,  'B',  'r',  'e',  'e', 
+    'z',  'e',  'E',  'n',  'h',  'a',  'n',  'c', 
+    'e',  'd',  ',',  'd',  'e',  'c',  'o',  'r', 
+    'a',  't',  'i',  'o',  'n',  0x6f,  'X',  '-', 
+    'K',  'D',  'E',  '-',  'P',  'a',  'r',  'e', 
+    'n',  't',  'A',  'p',  'p',  0x68,  'k',  'c', 
+    'o',  'n',  't',  'r',  'o',  'l',  0x6c,  'X', 
+    '-',  'K',  'D',  'E',  '-',  'W',  'e',  'i', 
+    'g',  'h',  't',  0x18,  0x3c, 
+    0xff, 
+};
+QT_MOC_EXPORT_PLUGIN_V2(kcm_breezeenhanced_factory, kcm_breezeenhanced_factory, qt_pluginMetaDataV2_kcm_breezeenhanced_factory)
+#else
+QT_PLUGIN_METADATA_SECTION
+Q_CONSTINIT static constexpr unsigned char qt_pluginMetaData_kcm_breezeenhanced_factory[] = {
+    'Q', 'T', 'M', 'E', 'T', 'A', 'D', 'A', 'T', 'A', ' ', '!',
+    // metadata version, Qt version, architectural requirements
+    0, QT_VERSION_MAJOR, QT_VERSION_MINOR, qPluginArchRequirements(),
+    0xbf, 
+    // "IID"
+    0x02,  0x76,  'o',  'r',  'g',  '.',  'k',  'd', 
+    'e',  '.',  'K',  'P',  'l',  'u',  'g',  'i', 
+    'n',  'F',  'a',  'c',  't',  'o',  'r',  'y', 
+    // "className"
+    0x03,  0x78,  0x1a,  'k',  'c',  'm',  '_',  'b', 
+    'r',  'e',  'e',  'z',  'e',  'e',  'n',  'h', 
+    'a',  'n',  'c',  'e',  'd',  '_',  'f',  'a', 
+    'c',  't',  'o',  'r',  'y', 
+    // "MetaData"
+    0x04,  0xa4,  0x67,  'K',  'P',  'l',  'u',  'g', 
+    'i',  'n',  0xa4,  0x6b,  'D',  'e',  's',  'c', 
+    'r',  'i',  'p',  't',  'i',  'o',  'n',  0x78, 
+    0x2b,  'M',  'o',  'd',  'i',  'f',  'y',  ' ', 
+    't',  'h',  'e',  ' ',  'a',  'p',  'p',  'e', 
+    'a',  'r',  'a',  'n',  'c',  'e',  ' ',  'o', 
+    'f',  ' ',  'w',  'i',  'n',  'd',  'o',  'w', 
+    ' ',  'd',  'e',  'c',  'o',  'r',  'a',  't', 
+    'i',  'o',  'n',  's',  0x64,  'I',  'c',  'o', 
+    'n',  0x78,  0x1a,  'p',  'r',  'e',  'f',  'e', 
+    'r',  'e',  'n',  'c',  'e',  's',  '-',  's', 
+    'y',  's',  't',  'e',  'm',  '-',  'w',  'i', 
+    'n',  'd',  'o',  'w',  's',  0x64,  'N',  'a', 
+    'm',  'e',  0x78,  0x20,  'B',  'r',  'e',  'e', 
+    'z',  'e',  'E',  'n',  'h',  'a',  'n',  'c', 
+    'e',  'd',  ' ',  'W',  'i',  'n',  'd',  'o', 
+    'w',  ' ',  'D',  'e',  'c',  'o',  'r',  'a', 
+    't',  'i',  'o',  'n',  0x6c,  'S',  'e',  'r', 
+    'v',  'i',  'c',  'e',  'T',  'y',  'p',  'e', 
+    's',  0x81,  0x68,  'K',  'C',  'M',  'o',  'd', 
+    'u',  'l',  'e',  0x6e,  'X',  '-',  'K',  'D', 
+    'E',  '-',  'K',  'e',  'y',  'w',  'o',  'r', 
+    'd',  's',  0x78,  0x19,  'B',  'r',  'e',  'e', 
+    'z',  'e',  'E',  'n',  'h',  'a',  'n',  'c', 
+    'e',  'd',  ',',  'd',  'e',  'c',  'o',  'r', 
+    'a',  't',  'i',  'o',  'n',  0x6f,  'X',  '-', 
+    'K',  'D',  'E',  '-',  'P',  'a',  'r',  'e', 
+    'n',  't',  'A',  'p',  'p',  0x68,  'k',  'c', 
+    'o',  'n',  't',  'r',  'o',  'l',  0x6c,  'X', 
+    '-',  'K',  'D',  'E',  '-',  'W',  'e',  'i', 
+    'g',  'h',  't',  0x18,  0x3c, 
+    0xff, 
+};
+QT_MOC_EXPORT_PLUGIN(kcm_breezeenhanced_factory, kcm_breezeenhanced_factory)
+#endif  // QT_MOC_EXPORT_PLUGIN_V2
+
+QT_WARNING_POP

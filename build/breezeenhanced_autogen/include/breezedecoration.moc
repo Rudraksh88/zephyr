@@ -1,0 +1,211 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'breezedecoration.cpp'
+**
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.7.2)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <QtCore/qmetatype.h>
+#include <QtCore/qplugin.h>
+
+#include <QtCore/qtmochelpers.h>
+
+#include <memory>
+
+
+#include <QtCore/qxptype_traits.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'breezedecoration.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.7.2. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
+#endif
+
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+QT_WARNING_DISABLE_GCC("-Wuseless-cast")
+namespace {
+
+#ifdef QT_MOC_HAS_STRINGDATA
+struct qt_meta_stringdata_CLASSBreezeDecoFactoryENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSBreezeDecoFactoryENDCLASS = QtMocHelpers::stringData(
+    "BreezeDecoFactory"
+);
+#else  // !QT_MOC_HAS_STRINGDATA
+#error "qtmochelpers.h not found or too old."
+#endif // !QT_MOC_HAS_STRINGDATA
+} // unnamed namespace
+
+Q_CONSTINIT static const uint qt_meta_data_CLASSBreezeDecoFactoryENDCLASS[] = {
+
+ // content:
+      12,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+Q_CONSTINIT const QMetaObject BreezeDecoFactory::staticMetaObject = { {
+    QMetaObject::SuperData::link<KPluginFactory::staticMetaObject>(),
+    qt_meta_stringdata_CLASSBreezeDecoFactoryENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSBreezeDecoFactoryENDCLASS,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSBreezeDecoFactoryENDCLASS_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<BreezeDecoFactory, std::true_type>
+    >,
+    nullptr
+} };
+
+void BreezeDecoFactory::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    (void)_o;
+    (void)_id;
+    (void)_c;
+    (void)_a;
+}
+
+const QMetaObject *BreezeDecoFactory::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *BreezeDecoFactory::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSBreezeDecoFactoryENDCLASS.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "org.kde.KPluginFactory"))
+        return static_cast< KPluginFactory*>(this);
+    return KPluginFactory::qt_metacast(_clname);
+}
+
+int BreezeDecoFactory::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = KPluginFactory::qt_metacall(_c, _id, _a);
+    return _id;
+}
+
+#ifdef QT_MOC_EXPORT_PLUGIN_V2
+static constexpr unsigned char qt_pluginMetaDataV2_BreezeDecoFactory[] = {
+    0xbf, 
+    // "IID"
+    0x02,  0x76,  'o',  'r',  'g',  '.',  'k',  'd', 
+    'e',  '.',  'K',  'P',  'l',  'u',  'g',  'i', 
+    'n',  'F',  'a',  'c',  't',  'o',  'r',  'y', 
+    // "className"
+    0x03,  0x71,  'B',  'r',  'e',  'e',  'z',  'e', 
+    'D',  'e',  'c',  'o',  'F',  'a',  'c',  't', 
+    'o',  'r',  'y', 
+    // "MetaData"
+    0x04,  0xa3,  0x67,  'K',  'P',  'l',  'u',  'g', 
+    'i',  'n',  0xa5,  0x6b,  'D',  'e',  's',  'c', 
+    'r',  'i',  'p',  't',  'i',  'o',  'n',  0x78, 
+    0x46,  'W',  'i',  'n',  'd',  'o',  'w',  ' ', 
+    'd',  'e',  'c',  'o',  'r',  'a',  't',  'i', 
+    'o',  'n',  ' ',  'u',  's',  'i',  'n',  'g', 
+    ' ',  't',  'h',  'e',  ' ',  'B',  'r',  'e', 
+    'e',  'z',  'e',  ' ',  'v',  'i',  's',  'u', 
+    'a',  'l',  ' ',  's',  't',  'y',  'l',  'e', 
+    ' ',  'f',  'o',  'r',  ' ',  't',  'h',  'e', 
+    ' ',  'P',  'l',  'a',  's',  'm',  'a',  ' ', 
+    'D',  'e',  's',  'k',  't',  'o',  'p',  0x70, 
+    'E',  'n',  'a',  'b',  'l',  'e',  'd',  'B', 
+    'y',  'D',  'e',  'f',  'a',  'u',  'l',  't', 
+    0xf5,  0x62,  'I',  'd',  0x76,  'o',  'r',  'g', 
+    '.',  'k',  'd',  'e',  '.',  'b',  'r',  'e', 
+    'e',  'z',  'e',  'e',  'n',  'h',  'a',  'n', 
+    'c',  'e',  'd',  0x64,  'N',  'a',  'm',  'e', 
+    0x6e,  'B',  'r',  'e',  'e',  'z',  'e',  'E', 
+    'n',  'h',  'a',  'n',  'c',  'e',  'd',  0x6c, 
+    'S',  'e',  'r',  'v',  'i',  'c',  'e',  'T', 
+    'y',  'p',  'e',  's',  0x81,  0x74,  'o',  'r', 
+    'g',  '.',  'k',  'd',  'e',  '.',  'k',  'd', 
+    'e',  'c',  'o',  'r',  'a',  't',  'i',  'o', 
+    'n',  '2',  0x72,  'X',  '-',  'K',  'D',  'E', 
+    '-',  'C',  'o',  'n',  'f',  'i',  'g',  'M', 
+    'o',  'd',  'u',  'l',  'e',  0x72,  'k',  'c', 
+    'm',  '_',  'b',  'r',  'e',  'e',  'z',  'e', 
+    'e',  'n',  'h',  'a',  'n',  'c',  'e',  'd', 
+    0x74,  'o',  'r',  'g',  '.',  'k',  'd',  'e', 
+    '.',  'k',  'd',  'e',  'c',  'o',  'r',  'a', 
+    't',  'i',  'o',  'n',  '2',  0xa2,  0x64,  'b', 
+    'l',  'u',  'r',  0xf5,  0x75,  'r',  'e',  'c', 
+    'o',  'm',  'm',  'e',  'n',  'd',  'e',  'd', 
+    'B',  'o',  'r',  'd',  'e',  'r',  'S',  'i', 
+    'z',  'e',  0x64,  'N',  'o',  'n',  'e', 
+    0xff, 
+};
+QT_MOC_EXPORT_PLUGIN_V2(BreezeDecoFactory, BreezeDecoFactory, qt_pluginMetaDataV2_BreezeDecoFactory)
+#else
+QT_PLUGIN_METADATA_SECTION
+Q_CONSTINIT static constexpr unsigned char qt_pluginMetaData_BreezeDecoFactory[] = {
+    'Q', 'T', 'M', 'E', 'T', 'A', 'D', 'A', 'T', 'A', ' ', '!',
+    // metadata version, Qt version, architectural requirements
+    0, QT_VERSION_MAJOR, QT_VERSION_MINOR, qPluginArchRequirements(),
+    0xbf, 
+    // "IID"
+    0x02,  0x76,  'o',  'r',  'g',  '.',  'k',  'd', 
+    'e',  '.',  'K',  'P',  'l',  'u',  'g',  'i', 
+    'n',  'F',  'a',  'c',  't',  'o',  'r',  'y', 
+    // "className"
+    0x03,  0x71,  'B',  'r',  'e',  'e',  'z',  'e', 
+    'D',  'e',  'c',  'o',  'F',  'a',  'c',  't', 
+    'o',  'r',  'y', 
+    // "MetaData"
+    0x04,  0xa3,  0x67,  'K',  'P',  'l',  'u',  'g', 
+    'i',  'n',  0xa5,  0x6b,  'D',  'e',  's',  'c', 
+    'r',  'i',  'p',  't',  'i',  'o',  'n',  0x78, 
+    0x46,  'W',  'i',  'n',  'd',  'o',  'w',  ' ', 
+    'd',  'e',  'c',  'o',  'r',  'a',  't',  'i', 
+    'o',  'n',  ' ',  'u',  's',  'i',  'n',  'g', 
+    ' ',  't',  'h',  'e',  ' ',  'B',  'r',  'e', 
+    'e',  'z',  'e',  ' ',  'v',  'i',  's',  'u', 
+    'a',  'l',  ' ',  's',  't',  'y',  'l',  'e', 
+    ' ',  'f',  'o',  'r',  ' ',  't',  'h',  'e', 
+    ' ',  'P',  'l',  'a',  's',  'm',  'a',  ' ', 
+    'D',  'e',  's',  'k',  't',  'o',  'p',  0x70, 
+    'E',  'n',  'a',  'b',  'l',  'e',  'd',  'B', 
+    'y',  'D',  'e',  'f',  'a',  'u',  'l',  't', 
+    0xf5,  0x62,  'I',  'd',  0x76,  'o',  'r',  'g', 
+    '.',  'k',  'd',  'e',  '.',  'b',  'r',  'e', 
+    'e',  'z',  'e',  'e',  'n',  'h',  'a',  'n', 
+    'c',  'e',  'd',  0x64,  'N',  'a',  'm',  'e', 
+    0x6e,  'B',  'r',  'e',  'e',  'z',  'e',  'E', 
+    'n',  'h',  'a',  'n',  'c',  'e',  'd',  0x6c, 
+    'S',  'e',  'r',  'v',  'i',  'c',  'e',  'T', 
+    'y',  'p',  'e',  's',  0x81,  0x74,  'o',  'r', 
+    'g',  '.',  'k',  'd',  'e',  '.',  'k',  'd', 
+    'e',  'c',  'o',  'r',  'a',  't',  'i',  'o', 
+    'n',  '2',  0x72,  'X',  '-',  'K',  'D',  'E', 
+    '-',  'C',  'o',  'n',  'f',  'i',  'g',  'M', 
+    'o',  'd',  'u',  'l',  'e',  0x72,  'k',  'c', 
+    'm',  '_',  'b',  'r',  'e',  'e',  'z',  'e', 
+    'e',  'n',  'h',  'a',  'n',  'c',  'e',  'd', 
+    0x74,  'o',  'r',  'g',  '.',  'k',  'd',  'e', 
+    '.',  'k',  'd',  'e',  'c',  'o',  'r',  'a', 
+    't',  'i',  'o',  'n',  '2',  0xa2,  0x64,  'b', 
+    'l',  'u',  'r',  0xf5,  0x75,  'r',  'e',  'c', 
+    'o',  'm',  'm',  'e',  'n',  'd',  'e',  'd', 
+    'B',  'o',  'r',  'd',  'e',  'r',  'S',  'i', 
+    'z',  'e',  0x64,  'N',  'o',  'n',  'e', 
+    0xff, 
+};
+QT_MOC_EXPORT_PLUGIN(BreezeDecoFactory, BreezeDecoFactory)
+#endif  // QT_MOC_EXPORT_PLUGIN_V2
+
+QT_WARNING_POP

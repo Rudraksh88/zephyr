@@ -1,0 +1,5 @@
+/usr/lib/libbreezeenhancedcommon6.so.6.0.0
+/usr/lib/libbreezeenhancedcommon6.so.6
+/usr/lib/qt6/plugins/org.kde.kdecoration2/breezeenhanced.so
+/usr/lib/qt6/plugins/org.kde.kdecoration2.kcm/kcm_breezeenhanced.so
+/usr/share/applications/kcm_breezeenhanced.desktop
