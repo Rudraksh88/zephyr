@@ -217,7 +217,7 @@ namespace Breeze
             QPen pen( foregroundColor );
             pen.setCapStyle( Qt::RoundCap );
             pen.setJoinStyle( Qt::MiterJoin );
-            pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
+            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
 
             switch( type() )
             {
@@ -258,12 +258,14 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
+                            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 19, 19 ) );
+                            painter->drawEllipse( QRectF( 0, 0, 20, 20 ) );
                         }
                         painter->setPen( pen );
                         if (isHovered())
-                            pen.setWidthF( 3*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
+                        pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
 
                         painter->drawLine( QPointF( 5, 5 ), QPointF( 13, 13 ) ); //
@@ -316,23 +318,28 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
+                            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 19, 19 ) );
+                            painter->drawEllipse( QRectF( 0, 0, 20, 20 ) );
                         }
 
                         if (isHovered())
-                            pen.setWidthF( 3*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                         painter->setPen( pen );
+                        pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
 
-                        painter->drawPolyline(QPolygonF()
-                                                << QPointF(5, 8) << QPointF(5, 13) << QPointF(10, 13));
-                        if (isChecked())
-                            painter->drawRect(QRectF(8.0, 5.0, 5.0, 5.0));
-                        else {
-                            painter->drawPolyline(QPolygonF()
-                                                  << QPointF(8, 5) << QPointF(13, 5) << QPointF(13, 10));
-                        }
+                        // painter->drawPolyline(QPolygonF()
+                        //                         << QPointF(5, 8) << QPointF(5, 13) << QPointF(10, 13));
+                        // if (isChecked())
+                        //     painter->drawRect(QRectF(8.0, 5.0, 5.0, 5.0));
+                        // else {
+                        //     painter->drawPolyline(QPolygonF()
+                        //                           << QPointF(8, 5) << QPointF(13, 5) << QPointF(13, 10));
+                        // }
+
+                        // Just draw a square for now
+                        painter->drawRect(QRectF(5.0, 5.0, 8.0, 8.0));
 
                         if (isHovered())
                             pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
@@ -376,16 +383,21 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
+                            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 19, 19 ) );
+                            painter->drawEllipse( QRectF( -1, 0, 20, 20 ) );
                         }
 
                         if (isHovered())
-                            pen.setWidthF( 3*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                         painter->setPen( pen );
+                        pen.setWidthF( 1.6*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
 
-                        painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
+                        // painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
+
+                        // Draw a line at the base of the maximize square
+                        painter->drawLine( QPointF( 3, 13 ), QPointF( 13, 13 ) );
 
                         if (isHovered())
                             pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
@@ -813,26 +825,27 @@ namespace Breeze
                 && m_animation->state() != QAbstractAnimation::Running)
             {
                 int v = qGray(inactiveCol.rgb());
-                if (v > 127) v -= 127;
-                else v += 128;
+                if (v > 127) v = 200;
+                else v = 200;
                 col = QColor(v, v, v);
             }
             else
             {
                 if (d && qGray(d->titleBarColor().rgb()) > 100)
-                    col = QColor(250, 250, 250);
+                    col = QColor(200, 200, 200);
                 else
-                    col = QColor(250, 250, 250);
+                    col = QColor(200, 200, 200);
             }
             return col;
         }
         else if( !d ) {
-
-            return QColor();
+            // Make colors white no matter what
+            return QColor(200, 200, 200);
 
         } else if( isPressed() ) {
 
-            return d->titleBarColor();
+            // return d->titleBarColor();
+            return QColor(200, 200, 200);
 
         /*} else if( type() == DecorationButtonType::Close && d->internalSettings()->outlineCloseButton() ) {
 
@@ -840,20 +853,23 @@ namespace Breeze
 
         } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove ) && isChecked() ) {
 
-            return d->titleBarColor();
+            // return d->titleBarColor();
+            return QColor(200, 200, 200);
 
         } else if( m_animation->state() == QAbstractAnimation::Running ) {
 
-            return KColorUtils::mix( d->fontColor(), d->titleBarColor(), m_opacity );
+            // return KColorUtils::mix( d->fontColor(), d->titleBarColor(), m_opacity );
+            return QColor(200, 200, 200);
 
         } else if( isHovered() ) {
 
-            return d->titleBarColor();
+            // return d->titleBarColor();
+            return QColor(200, 200, 200);
 
         } else {
 
-            return d->fontColor();
-
+            // return d->fontColor();
+            return QColor(200, 200, 200);
         }
 
     }
@@ -1005,16 +1021,17 @@ namespace Breeze
             auto c = d->client();
             if( isPressed() ) {
 
-                if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
+                // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
+                if( type() == DecorationButtonType::Close ) return QColor(212,71,71);
                 else
                 {
                     QColor col;
                     // If the titlebar is light, the button should be dark
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(255, 255, 255, 210); // This is the color of the button when it is pressed
+                        col = QColor(255, 255, 255, 85); // This is the color of the button when it is pressed
                     // If the titlebar is dark, the button should be light
                     else
-                        col = QColor(255, 255, 255, 210); // This is the color of the button when it is pressed
+                        col = QColor(255, 255, 255, 85); // This is the color of the button when it is pressed
                     return col;
                 }
 
@@ -1032,7 +1049,8 @@ namespace Breeze
                 if( type() == DecorationButtonType::Close )
                 {
 
-                    QColor color( c->color( ColorGroup::Warning, ColorRole::Foreground ) );
+                    // QColor color( c->color( ColorGroup::Warning, ColorRole::Foreground ) );
+                    QColor color(212,71,71);
                     color.setAlpha( color.alpha()*m_opacity );
                     return color;
 
@@ -1050,7 +1068,8 @@ namespace Breeze
 
             } else if( isHovered() ) {
 
-                if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground ).lighter();
+                // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
+                if( type() == DecorationButtonType::Close ) return QColor(212,71,71);
                 else
                 {
 
@@ -1062,7 +1081,7 @@ namespace Breeze
 
                     // If the titlebar is dark, the button should be light
                     else
-                        col = QColor(255, 255, 255, 80); // This is the color of the button when it is hovered
+                        col = QColor(255, 255, 255, 50); // This is the color of the button when it is hovered
                     return col;
 
                 }

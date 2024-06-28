@@ -1408,38 +1408,17 @@ breezeenhanced_autogen/timestamp: /home/rtx/Desktop/BreezeEnhanced-master/CMakeL
   /usr/share/ECM/modules/ECMUseFindModules.cmake \
   /usr/share/ECM/modules/QtVersionOption.cmake \
   /usr/share/ECM/modules/ecm_uninstall.cmake.in \
-  /usr/share/cmake/Modules/CMakeCCompiler.cmake.in \
-  /usr/share/cmake/Modules/CMakeCCompilerABI.c \
   /usr/share/cmake/Modules/CMakeCInformation.cmake \
-  /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in \
-  /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp \
   /usr/share/cmake/Modules/CMakeCXXInformation.cmake \
   /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake \
-  /usr/share/cmake/Modules/CMakeDetermineSystem.cmake \
-  /usr/share/cmake/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
   /usr/share/cmake/Modules/CMakeGenericSystem.cmake \
   /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake \
   /usr/share/cmake/Modules/CMakeLanguageInformation.cmake \
   /usr/share/cmake/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake \
-  /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake \
-  /usr/share/cmake/Modules/CMakeSystem.cmake.in \
   /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
   /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake/Modules/CMakeTestCCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake \
-  /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake \
-  /usr/share/cmake/Modules/CMakeUnixFindMake.cmake \
   /usr/share/cmake/Modules/CheckCCompilerFlag.cmake \
   /usr/share/cmake/Modules/CheckCSourceCompiles.cmake \
   /usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
@@ -1451,64 +1430,10 @@ breezeenhanced_autogen/timestamp: /home/rtx/Desktop/BreezeEnhanced-master/CMakeL
   /usr/share/cmake/Modules/CheckLibraryExists.cmake \
   /usr/share/cmake/Modules/CheckSourceCompiles.cmake \
   /usr/share/cmake/Modules/CheckSymbolExists.cmake \
-  /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  /usr/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/GNU-C.cmake \
-  /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake \
-  /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-  /usr/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake \
-  /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   /usr/share/cmake/Modules/FeatureSummary.cmake \
   /usr/share/cmake/Modules/FindFontconfig.cmake \
   /usr/share/cmake/Modules/FindFreetype.cmake \
@@ -1522,13 +1447,10 @@ breezeenhanced_autogen/timestamp: /home/rtx/Desktop/BreezeEnhanced-master/CMakeL
   /usr/share/cmake/Modules/FindX11.cmake \
   /usr/share/cmake/Modules/GNUInstallDirs.cmake \
   /usr/share/cmake/Modules/GenerateExportHeader.cmake \
-  /usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake \
   /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake \
   /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake \
-  /usr/share/cmake/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake/Modules/MacroAddFileDependencies.cmake \
-  /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake \
   /usr/share/cmake/Modules/Platform/Linux-GNU.cmake \
@@ -3716,13 +3638,9 @@ ui_breezeexceptionlistwidget.h:
 
 /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake:
 
-/usr/share/cmake/Modules/Internal/FeatureTesting.cmake:
-
 /usr/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake:
 
 /usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:
-
-/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:
 
 /usr/share/cmake/Modules/GNUInstallDirs.cmake:
 
@@ -3744,59 +3662,7 @@ ui_breezeexceptionlistwidget.h:
 
 /usr/share/cmake/Modules/FeatureSummary.cmake:
 
-/usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
-
-/usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake:
-
 /usr/share/cmake/Modules/Compiler/GNU.cmake:
-
-/usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
-
-/usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
 
 /usr/share/cmake/Modules/CheckSymbolExists.cmake:
 
@@ -3808,31 +3674,13 @@ ui_breezeexceptionlistwidget.h:
 
 /usr/share/cmake/Modules/CheckCCompilerFlag.cmake:
 
-/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:
-
-/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:
-
 /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake:
 
 /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:
 
-/usr/share/cmake/Modules/CMakeSystem.cmake.in:
-
-/usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake:
-
 /usr/share/cmake/Modules/CMakeLanguageInformation.cmake:
 
 /usr/share/cmake/Modules/CMakeGenericSystem.cmake:
-
-/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake:
 
 /usr/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
 
@@ -3895,8 +3743,6 @@ ui_breezeexceptionlistwidget.h:
 /usr/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfig.cmake:
 
 /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationVersionlessTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersionImpl.cmake:
 
@@ -3968,8 +3814,6 @@ ui_breezeexceptionlistwidget.h:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets.cmake:
 
-/usr/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginConfig.cmake:
@@ -3977,8 +3821,6 @@ ui_breezeexceptionlistwidget.h:
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets.cmake:
 
@@ -4142,8 +3984,6 @@ breezesettings.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets.cmake:
 
-/usr/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake:
@@ -4183,8 +4023,6 @@ breezesettings.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginAdditionalTargetInfo.cmake:
-
-/usr/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginAdditionalTargetInfo.cmake:
 
@@ -4234,19 +4072,13 @@ breezesettings.h:
 
 /usr/include/qt6/QtGui/qpicture.h:
 
-/usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
-
 /usr/bin/cmake:
-
-/usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtGui/qpolygon.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginConfig.cmake:
 
 /usr/include/qt6/QtCore/qfunctionaltools_impl.h:
-
-/usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtGui/qpainterpath.h:
 
@@ -4316,8 +4148,6 @@ breezesettings.h:
 
 /usr/include/qt6/QtGui/qpalette.h:
 
-/usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
-
 /usr/include/c++/14.1.1/bits/stl_iterator.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginAdditionalTargetInfo.cmake:
@@ -4374,8 +4204,6 @@ breezesettings.h:
 
 /usr/include/bits/stdint-uintn.h:
 
-/usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QEvdevTabletPluginTargets.cmake:
 
 /usr/include/qt6/QtCore/qlocale.h:
@@ -4429,8 +4257,6 @@ breezesettings.h:
 /usr/include/qt6/QtCore/qcoreapplication.h:
 
 /usr/include/qt6/QtCore/qcontainertools_impl.h:
-
-/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets-relwithdebinfo.cmake:
 
@@ -4514,11 +4340,7 @@ breezesettings.h:
 
 /usr/include/qt6/QtCore/qfunctionpointer.h:
 
-/usr/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake:
-
 /usr/include/qt6/QtCore/QStringList:
-
-/usr/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtCore/QString:
 
@@ -4609,8 +4431,6 @@ breezesettings.h:
 /usr/include/qt6/QtCore/qarraydatapointer.h:
 
 /usr/lib/cmake/KF6I18n/KF6I18nTargets-noconfig.cmake:
-
-/usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake:
 
@@ -4704,8 +4524,6 @@ breezesettings.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2AdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake:
-
 /usr/include/qt6/QtCore/qnumeric.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
@@ -4727,8 +4545,6 @@ breezesettings.h:
 /usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/bits/types/struct_FILE.h:
-
-/usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake:
 
 /home/rtx/Desktop/BreezeEnhanced-master/config/breezeitemmodel.h:
 
@@ -4806,8 +4622,6 @@ breezesettings.h:
 
 /usr/include/c++/14.1.1/bits/refwrap.h:
 
-/usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake:
-
 /usr/include/c++/14.1.1/bits/uses_allocator_args.h:
 
 /usr/include/qt6/QtWidgets/qabstractspinbox.h:
@@ -4815,8 +4629,6 @@ breezesettings.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaConfig.cmake:
 
 /usr/include/bits/setjmp.h:
-
-/usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtCore/qregularexpression.h:
 
@@ -4869,8 +4681,6 @@ breezesettings.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginAdditionalTargetInfo.cmake:
 
 /usr/include/c++/14.1.1/bits/std_function.h:
-
-/usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake:
 
 /usr/include/c++/14.1.1/ext/type_traits.h:
 
@@ -5009,8 +4819,6 @@ CMakeFiles/3.29.6/CMakeCCompiler.cmake:
 /home/rtx/Desktop/BreezeEnhanced-master/breezesettingsprovider.h:
 
 /usr/include/bits/types/cookie_io_functions_t.h:
-
-/usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
 
 /usr/include/qt6/QtCore/QStandardPaths:
 
@@ -5158,8 +4966,6 @@ CMakeFiles/3.29.6/CMakeCCompiler.cmake:
 
 /usr/include/qt6/QtWidgets/qstyle.h:
 
-/usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbhunspellpluginTargets.cmake:
 
 /usr/include/qt6/QtCore/qtaggedpointer.h:
@@ -5188,15 +4994,11 @@ CMakeFiles/3.29.6/CMakeCCompiler.cmake:
 
 /usr/include/KF6/KConfig/kconfig_version.h:
 
-/usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginAdditionalTargetInfo.cmake:
 
 /usr/include/qt6/QtCore/QMetaType:
-
-/usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
 
 /usr/include/KF6/KCMUtilsCore/KAbstractConfigModule:
 
@@ -5241,8 +5043,6 @@ CMakeFiles/3.29.6/CMakeCXXCompiler.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dhelperspluginTargets.cmake:
 
 /home/rtx/Desktop/BreezeEnhanced-master/breeze.h:
-
-/usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
 
 /usr/include/sys/types.h:
 
@@ -5299,8 +5099,6 @@ breezeenhanced_autogen/moc_predefs.h:
 /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake:
-
-/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:
 
 /usr/include/c++/14.1.1/vector:
 
@@ -5433,8 +5231,6 @@ breezeenhanced_autogen/moc_predefs.h:
 /usr/include/qt6/QtCore/qcoreevent.h:
 
 /usr/include/qt6/QtCore/qnamespace.h:
-
-/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:
 
 /usr/include/KF6/KCoreAddons/kpluginfactory.h:
 
@@ -5576,8 +5372,6 @@ breezeenhanced_autogen/moc_predefs.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets-relwithdebinfo.cmake:
 
-/usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in:
-
 /usr/include/features-time64.h:
 
 /usr/include/bits/cpu-set.h:
@@ -5629,8 +5423,6 @@ breezeenhanced_autogen/moc_predefs.h:
 /usr/include/c++/14.1.1/bits/exception_defines.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets.cmake:
-
-/usr/share/cmake/Modules/CMakeCCompilerABI.c:
 
 /usr/include/qt6/QtCore/qttypetraits.h:
 
@@ -5808,8 +5600,6 @@ breezeenhanced_autogen/moc_predefs.h:
 
 /usr/lib/cmake/KF6Codecs/KF6CodecsConfig.cmake:
 
-/usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake:
-
 /usr/include/qt6/QtCore/qurl.h:
 
 /usr/include/qt6/QtCore/qelapsedtimer.h:
@@ -5884,8 +5674,6 @@ breezeenhanced_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtWidgets/QPushButton:
 
-/usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake:
 
 /usr/include/c++/14.1.1/bits/exception.h:
@@ -5929,8 +5717,6 @@ breezeenhanced_autogen/moc_predefs.h:
 /usr/include/qt6/QtWidgets/qlabel.h:
 
 /usr/include/c++/14.1.1/stdlib.h:
-
-/usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
 
 /usr/include/c++/14.1.1/ext/aligned_buffer.h:
 
@@ -6068,8 +5854,6 @@ breezeenhanced_autogen/EWIEGA46WW/moc_breezebutton.cpp:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginConfig.cmake:
 
-/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:
-
 /usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake:
 
 /usr/lib/cmake/KF6GuiAddons/KF6GuiAddonsConfigVersion.cmake:
@@ -6190,8 +5974,6 @@ libbreezecommon/breezecommon_export.h:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:
 
-/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbpluginspluginTargets.cmake:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:
@@ -6199,8 +5981,6 @@ libbreezecommon/breezecommon_export.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake:
-
-/usr/share/cmake/Modules/CMakeCCompiler.cmake.in:
 
 /usr/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake:
 
@@ -6249,8 +6029,6 @@ libbreezecommon/breezecommon_export.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake:
 
@@ -6438,8 +6216,6 @@ libbreezecommon/breezecommon_export.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake:
 
-/usr/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake:
-
 /usr/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake:
@@ -6515,8 +6291,6 @@ libbreezecommon/breezecommon_export.h:
 /usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXcbIntegrationPluginAdditionalTargetInfo.cmake:
-
-/usr/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QXdgDesktopPortalThemePluginConfig.cmake:
 
@@ -6610,8 +6384,6 @@ libbreezecommon/breezecommon_export.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake:
 
-/usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake:
-
 /usr/include/asm-generic/errno-base.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaTargets-relwithdebinfo.cmake:
@@ -6619,8 +6391,6 @@ libbreezecommon/breezecommon_export.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlNetworkpluginTargets.cmake:
-
-/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick3dparticleeffectspluginConfig.cmake:
 
@@ -6635,8 +6405,6 @@ libbreezecommon/breezecommon_export.h:
 /usr/include/qt6/QtDBus/QDBusPendingCallWatcher:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake:
 
@@ -6691,8 +6459,6 @@ ui_breezeconfigurationui.h:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingTargets.cmake:
-
-/usr/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuickpluginTargets-relwithdebinfo.cmake:
 
