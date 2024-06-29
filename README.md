@@ -1,27 +1,33 @@
-# BreezeEnhanced
+# Zephyr
 
 ## Overview
 
-BreezeEnhanced is a fork of KDE Breeze decoration with the following changes:
+Zephyr (meaning "breeze" in Greek) is a light wind that usually comes from the west. Zephyr is a fork of [BreezeEnhanced](https://github.com/tsujan/BreezeEnhanced) which itself is a fork of KDE Breeze.
 
- * The optional title-bar gradient is smooth and has a configurable intensity.
- * The title-bar opacity is configurable.
- * A very mild light line is added to the top of title-bar (especially for dark color schemes) and the separator between title-bar and window is removed.
- * By default, the close, minimize and maximize buttons are macOS-like and their sizes change on mouse-over when animation is enabled.
- * The spacing between buttons is configurable.
- * Opaqueness, opacity override and flatness are added to the exception list properties.
- * Title-bar font is set indpendent from the KDE font settings (for use outside KDE).
 
-Please note that BreezeEnhanced is not related to the Breeze widget style. In fact, it is made to match various themes of the [Kvantum](https://github.com/tsujan/Kvantum) widget style but it works with all styles.
+![Preview](preview.png)
 
-## Credits:
+Zephyr is a minimal theme focused on simplicity and elegance.
 
-BreezeEnhanced was started from [BreezeBlurred](https://github.com/alex47/BreezeBlurred), a former fork of Breeze with title-bar translucency and blurring.
+### Features:
+Better looking buttons and overall aesthetics with the same bells and whistles as BreezeEnhanced.
 
-Needless to say, the main work behind BreezeEnhanced is the Breeze KWin decoration itself, which can be downloaded from <https://download.kde.org/stable/plasma/>.
+## Screenshots/Previews:
+![Hover Preview](hover.gif)
+
+## Why another fork?
+Well I tried a lot of Kvantum themes and albeit they all looked beautiful, they were not as responsive as BreezeEnhanced (or any other native KDE theme). For example, sometimes the clicks would not register or if you clicked twice on the minimize/maximize button very quickly, the window would register both the clicks and minimize/maximize twice.
+
+Other forks like [SierraBreezeEnhanced](https://github.com/kupiqu/SierraBreezeEnhanced) and others were perfectly fine but they had precise hitboxes and required you to click inside the button geometry to register a click. This was not the case with KDE Breeze and BreezeEnhanced. BreezeEnhanced was good but still, had very thin (non macOS style) icons for the buttons.
+
+So I decided to fork BreezeEnhanced and fine-tune it to my liking.
 
 ## Installation
+```
+Tested on KDE Plasma 6.1.1
+```
 
+#### Same installation instructions as BreezeEnhanced:
 The version number in the file [NEWS](NEWS) shows the main version of KWin that is required for the compilation. *Compilation should not be done against other versions of KWin!*
 
 In what follows, it is supposed that the name of the installation directory of KDE libraries is `lib` and the installation prefix is `/usr`. If they are different in your distro, please replace them!
@@ -35,29 +41,30 @@ sudo make install
 ```
 After the intallation, restart KWin by logging out and in. Then, BreezeEnhanced will appear in *System Settings &rarr; Application Style &rarr; Window Decorations*.
 
-### Installation with package manager
-
-Users of Arch and its derivatives can install breeze-enhanced-git from AUR.
-
-Users of OpenSUSE Tumbleweed can do (thanks to trmdi at GitHub):
+If you are using Wayland, you can just restart the compositor using
 ```sh
-sudo zypper ar obs://home:trmdi trmdi
-sudo zypper in -r trmdi BreezeEnhanced
+kwin_wayland --replace
 ```
 
-Users of Ubuntu can do (thanks to krisives at GitHub):
-```sh
-sudo add-apt-repository ppa:krisives/breezeenhanced
-sudo apt-get update
-sudo apt install breezeenhanced
-```
+## Known issues:
+- The current version is still named BreezeEnhanced in the source code. I will change it in the future.
+- Properly implemented only at Medium size. Other sizes are probably buggy.
+- Only supports Dark theme for now. Light theme will be added in the future.
 
-## Screenshots:
+## Future plans:
+I just quickly hacked the theme to my liking, just so I could use it. I will fix the issues and add more features in the future. Here are some of the things I plan to do:
 
-![Settings](screenshots/Settings.png?raw=true "Settings")
+- [ ] Add Light theme
+- [ ] Add support for other sizes
+- [ ] Move the hardcoded values for icon stroke, padding, etc. to the UI
+- [ ] Add a monochrome macOS style
+- [ ] Port other features from SierraBreezeEnhanced
 
-![Exception](screenshots/Exception.png?raw=true "Exception")
+## Credits:
 
-![Buttons](screenshots/Buttons.png?raw=true "Buttons")
+BreezeEnhanced by [Pedram Pourang a.k.a Tsu Jan](https://github.com/tsujan/Kvantum/tree/master/Kvantum#contact)
 
-![Animation](screenshots/Animation.gif?raw=true "Animation")
+
+BreezeEnhanced was started from [BreezeBlurred](https://github.com/alex47/BreezeBlurred), a former fork of Breeze with title-bar translucency and blurring.
+
+Needless to say, the main work behind BreezeEnhanced is the Breeze KWin decoration itself, which can be downloaded from <https://download.kde.org/stable/plasma/>.
