@@ -189,8 +189,8 @@ namespace Breeze
         // painter->scale( width/21, width/21 );
         // painter->translate( 0, 0 );
 
-        painter->scale( width/21, width/21 );
-        painter->translate( 1, 2 );
+        painter->scale( width/23, width/23 );
+        painter->translate( 2, 3 );
 
         // render background
         const QColor backgroundColor( this->backgroundColor() );
@@ -263,7 +263,7 @@ namespace Breeze
                             painter->setPen( Qt::NoPen );
                             pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( -1, -1, 21, 21 ) );
+                            painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
                         }
                         painter->setPen( pen );
                         if (isHovered())
@@ -323,7 +323,7 @@ namespace Breeze
                             painter->setPen( Qt::NoPen );
                             pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( -1, -1, 21, 21 ) );
+                            painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
                         }
 
                         if (isHovered())
@@ -341,8 +341,17 @@ namespace Breeze
                         //                           << QPointF(8, 5) << QPointF(13, 5) << QPointF(13, 10));
                         // }
 
-                        // Just draw a square for now
-                        painter->drawRect(QRectF(5.0, 5.0, 8.0, 8.0));
+                        // Just draw a square for now for maximize
+
+
+                        if (isChecked()) {
+                            painter->drawPolyline(QPolygonF()
+                                                  << QPointF(8, 5) << QPointF(14, 5) << QPointF(14, 10));
+                            painter->drawRect(QRectF(5.0, 7.0, 7.0, 7.0));
+                        } else {
+                            painter->drawRect(QRectF(5.0, 5.0, 8.0, 8.0));
+                        }
+
 
                         if (isHovered())
                             pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
@@ -388,7 +397,7 @@ namespace Breeze
                             painter->setPen( Qt::NoPen );
                             pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( -1, -1, 21, 21 ) );
+                            painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
                         }
 
                         if (isHovered())
@@ -1025,7 +1034,7 @@ namespace Breeze
             if( isPressed() ) {
 
                 // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
-                if( type() == DecorationButtonType::Close ) return QColor(204, 51, 51);
+                if( type() == DecorationButtonType::Close ) return QColor(204, 51, 51, 180);
                 else
                 {
                     QColor col;
@@ -1053,7 +1062,7 @@ namespace Breeze
                 {
 
                     // QColor color( c->color( ColorGroup::Warning, ColorRole::Foreground ) );
-                    QColor color(204, 51, 51);
+                    QColor color(204, 51, 51, 180);
                     color.setAlpha( color.alpha()*m_opacity );
                     return color;
 
@@ -1072,7 +1081,7 @@ namespace Breeze
             } else if( isHovered() ) {
 
                 // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
-                if( type() == DecorationButtonType::Close ) return QColor(204, 51, 51);
+                if( type() == DecorationButtonType::Close ) return QColor(204, 51, 51, 180);
                 else
                 {
 
