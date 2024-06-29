@@ -1,6 +1,23 @@
 /home/rtx/Desktop/BreezeEnhanced-master/build/breezeenhanced_STATIC_autogen/IJHAR2IVER/moc_breezeexceptiondialog.cpp: /home/rtx/Desktop/BreezeEnhanced-master/config/breezeexceptiondialog.h \
   /home/rtx/Desktop/BreezeEnhanced-master/build/breezeenhanced_STATIC_autogen/moc_predefs.h \
   /home/rtx/Desktop/BreezeEnhanced-master/breeze.h \
+  /home/rtx/Desktop/BreezeEnhanced-master/build/breezesettings.h \
+  /home/rtx/Desktop/BreezeEnhanced-master/build/ui_breezeexceptiondialog.h \
+  /usr/include/KF6/KConfig/kconfig_version.h \
+  /usr/include/KF6/KConfigCore/kconfig.h \
+  /usr/include/KF6/KConfigCore/kconfigbase.h \
+  /usr/include/KF6/KConfigCore/kconfigconversioncheck_p.h \
+  /usr/include/KF6/KConfigCore/kconfigcore_export.h \
+  /usr/include/KF6/KConfigCore/kconfiggroup.h \
+  /usr/include/KF6/KConfigCore/kcoreconfigskeleton.h \
+  /usr/include/KF6/KConfigCore/ksharedconfig.h \
+  /usr/include/KF6/KConfigGui/kconfiggui_export.h \
+  /usr/include/KF6/KConfigGui/kconfigskeleton.h \
+  /usr/include/KF6/KI18n/ki18n_export.h \
+  /usr/include/KF6/KI18n/ki18n_version.h \
+  /usr/include/KF6/KI18n/klocalizedcontext.h \
+  /usr/include/KF6/KI18n/klocalizedstring.h \
+  /usr/include/KF6/KI18n/kuitsetup.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -246,13 +263,34 @@
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt6/QtCore/QByteArray \
+  /usr/include/qt6/QtCore/QChar \
+  /usr/include/qt6/QtCore/QCoreApplication \
+  /usr/include/qt6/QtCore/QDate \
+  /usr/include/qt6/QtCore/QDebug \
+  /usr/include/qt6/QtCore/QExplicitlySharedDataPointer \
+  /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QLatin1Char \
   /usr/include/qt6/QtCore/QList \
   /usr/include/qt6/QtCore/QMap \
+  /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QPoint \
+  /usr/include/qt6/QtCore/QRect \
+  /usr/include/qt6/QtCore/QSet \
   /usr/include/qt6/QtCore/QSharedPointer \
+  /usr/include/qt6/QtCore/QSize \
+  /usr/include/qt6/QtCore/QStandardPaths \
+  /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QStringList \
+  /usr/include/qt6/QtCore/QUrl \
+  /usr/include/qt6/QtCore/QUuid \
+  /usr/include/qt6/QtCore/QVariant \
+  /usr/include/qt6/QtCore/QtGlobal \
   /usr/include/qt6/QtCore/q20functional.h \
   /usr/include/qt6/QtCore/q20memory.h \
   /usr/include/qt6/QtCore/q20type_traits.h \
   /usr/include/qt6/QtCore/q23utility.h \
+  /usr/include/qt6/QtCore/qabstractitemmodel.h \
   /usr/include/qt6/QtCore/qalgorithms.h \
   /usr/include/qt6/QtCore/qanystringview.h \
   /usr/include/qt6/QtCore/qarraydata.h \
@@ -267,6 +305,7 @@
   /usr/include/qt6/QtCore/qbytearrayalgorithms.h \
   /usr/include/qt6/QtCore/qbytearraylist.h \
   /usr/include/qt6/QtCore/qbytearrayview.h \
+  /usr/include/qt6/QtCore/qcalendar.h \
   /usr/include/qt6/QtCore/qchar.h \
   /usr/include/qt6/QtCore/qcompare.h \
   /usr/include/qt6/QtCore/qcompare_impl.h \
@@ -278,10 +317,17 @@
   /usr/include/qt6/QtCore/qcontainerinfo.h \
   /usr/include/qt6/QtCore/qcontainertools_impl.h \
   /usr/include/qt6/QtCore/qcontiguouscache.h \
+  /usr/include/qt6/QtCore/qcoreapplication.h \
+  /usr/include/qt6/QtCore/qcoreapplication_platform.h \
+  /usr/include/qt6/QtCore/qcoreevent.h \
   /usr/include/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/qt6/QtCore/qdatastream.h \
+  /usr/include/qt6/QtCore/qdatetime.h \
+  /usr/include/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/qt6/QtCore/qdebug.h \
+  /usr/include/qt6/QtCore/qelapsedtimer.h \
   /usr/include/qt6/QtCore/qendian.h \
+  /usr/include/qt6/QtCore/qeventloop.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
@@ -293,12 +339,14 @@
   /usr/include/qt6/QtCore/qglobalstatic.h \
   /usr/include/qt6/QtCore/qhash.h \
   /usr/include/qt6/QtCore/qhashfunctions.h \
+  /usr/include/qt6/QtCore/qiodevice.h \
   /usr/include/qt6/QtCore/qiodevicebase.h \
   /usr/include/qt6/QtCore/qiterable.h \
   /usr/include/qt6/QtCore/qiterator.h \
   /usr/include/qt6/QtCore/qlatin1stringview.h \
   /usr/include/qt6/QtCore/qline.h \
   /usr/include/qt6/QtCore/qlist.h \
+  /usr/include/qt6/QtCore/qlocale.h \
   /usr/include/qt6/QtCore/qlogging.h \
   /usr/include/qt6/QtCore/qmalloc.h \
   /usr/include/qt6/QtCore/qmap.h \
@@ -308,6 +356,7 @@
   /usr/include/qt6/QtCore/qmetatype.h \
   /usr/include/qt6/QtCore/qminmax.h \
   /usr/include/qt6/QtCore/qnamespace.h \
+  /usr/include/qt6/QtCore/qnativeinterface.h \
   /usr/include/qt6/QtCore/qnumeric.h \
   /usr/include/qt6/QtCore/qobject.h \
   /usr/include/qt6/QtCore/qobject_impl.h \
@@ -319,6 +368,7 @@
   /usr/include/qt6/QtCore/qprocessordetection.h \
   /usr/include/qt6/QtCore/qrect.h \
   /usr/include/qt6/QtCore/qrefcount.h \
+  /usr/include/qt6/QtCore/qregularexpression.h \
   /usr/include/qt6/QtCore/qscopedpointer.h \
   /usr/include/qt6/QtCore/qscopeguard.h \
   /usr/include/qt6/QtCore/qset.h \
@@ -327,6 +377,7 @@
   /usr/include/qt6/QtCore/qsharedpointer.h \
   /usr/include/qt6/QtCore/qsharedpointer_impl.h \
   /usr/include/qt6/QtCore/qsize.h \
+  /usr/include/qt6/QtCore/qstandardpaths.h \
   /usr/include/qt6/QtCore/qstring.h \
   /usr/include/qt6/QtCore/qstringalgorithms.h \
   /usr/include/qt6/QtCore/qstringbuilder.h \
@@ -360,12 +411,16 @@
   /usr/include/qt6/QtCore/qtversionchecks.h \
   /usr/include/qt6/QtCore/qtypeinfo.h \
   /usr/include/qt6/QtCore/qtypes.h \
+  /usr/include/qt6/QtCore/qurl.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
+  /usr/include/qt6/QtCore/quuid.h \
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtGui/QColor \
+  /usr/include/qt6/QtGui/QFont \
   /usr/include/qt6/QtGui/qaction.h \
   /usr/include/qt6/QtGui/qbitmap.h \
   /usr/include/qt6/QtGui/qbrush.h \
@@ -374,26 +429,73 @@
   /usr/include/qt6/QtGui/qfont.h \
   /usr/include/qt6/QtGui/qfontinfo.h \
   /usr/include/qt6/QtGui/qfontmetrics.h \
+  /usr/include/qt6/QtGui/qguiapplication.h \
+  /usr/include/qt6/QtGui/qguiapplication_platform.h \
   /usr/include/qt6/QtGui/qicon.h \
   /usr/include/qt6/QtGui/qimage.h \
+  /usr/include/qt6/QtGui/qinputmethod.h \
   /usr/include/qt6/QtGui/qkeysequence.h \
   /usr/include/qt6/QtGui/qpaintdevice.h \
   /usr/include/qt6/QtGui/qpalette.h \
+  /usr/include/qt6/QtGui/qpen.h \
+  /usr/include/qt6/QtGui/qpicture.h \
   /usr/include/qt6/QtGui/qpixelformat.h \
   /usr/include/qt6/QtGui/qpixmap.h \
   /usr/include/qt6/QtGui/qpolygon.h \
   /usr/include/qt6/QtGui/qregion.h \
   /usr/include/qt6/QtGui/qrgb.h \
   /usr/include/qt6/QtGui/qrgba64.h \
+  /usr/include/qt6/QtGui/qtextcursor.h \
+  /usr/include/qt6/QtGui/qtextdocument.h \
+  /usr/include/qt6/QtGui/qtextformat.h \
+  /usr/include/qt6/QtGui/qtextoption.h \
   /usr/include/qt6/QtGui/qtgui-config.h \
   /usr/include/qt6/QtGui/qtguiexports.h \
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
+  /usr/include/qt6/QtGui/qvalidator.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
+  /usr/include/qt6/QtWidgets/QAbstractButton \
+  /usr/include/qt6/QtWidgets/QApplication \
   /usr/include/qt6/QtWidgets/QCheckBox \
+  /usr/include/qt6/QtWidgets/QComboBox \
+  /usr/include/qt6/QtWidgets/QDialog \
+  /usr/include/qt6/QtWidgets/QDialogButtonBox \
+  /usr/include/qt6/QtWidgets/QGridLayout \
+  /usr/include/qt6/QtWidgets/QGroupBox \
+  /usr/include/qt6/QtWidgets/QHBoxLayout \
+  /usr/include/qt6/QtWidgets/QLabel \
+  /usr/include/qt6/QtWidgets/QLineEdit \
+  /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QSpacerItem \
+  /usr/include/qt6/QtWidgets/QSpinBox \
+  /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
+  /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
+  /usr/include/qt6/QtWidgets/qabstractslider.h \
+  /usr/include/qt6/QtWidgets/qabstractspinbox.h \
+  /usr/include/qt6/QtWidgets/qapplication.h \
+  /usr/include/qt6/QtWidgets/qboxlayout.h \
   /usr/include/qt6/QtWidgets/qcheckbox.h \
+  /usr/include/qt6/QtWidgets/qcombobox.h \
+  /usr/include/qt6/QtWidgets/qdialog.h \
+  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
+  /usr/include/qt6/QtWidgets/qframe.h \
+  /usr/include/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/qt6/QtWidgets/qgroupbox.h \
+  /usr/include/qt6/QtWidgets/qlabel.h \
+  /usr/include/qt6/QtWidgets/qlayout.h \
+  /usr/include/qt6/QtWidgets/qlayoutitem.h \
+  /usr/include/qt6/QtWidgets/qlineedit.h \
+  /usr/include/qt6/QtWidgets/qpushbutton.h \
+  /usr/include/qt6/QtWidgets/qrubberband.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
+  /usr/include/qt6/QtWidgets/qslider.h \
+  /usr/include/qt6/QtWidgets/qspinbox.h \
+  /usr/include/qt6/QtWidgets/qstyle.h \
+  /usr/include/qt6/QtWidgets/qstyleoption.h \
+  /usr/include/qt6/QtWidgets/qtabbar.h \
+  /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

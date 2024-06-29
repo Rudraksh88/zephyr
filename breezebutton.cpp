@@ -189,8 +189,8 @@ namespace Breeze
         // painter->scale( width/21, width/21 );
         // painter->translate( 0, 0 );
 
-        painter->scale( width/23, width/23 );
-        painter->translate( 2, 3 );
+        painter->scale( width/24, width/24 );
+        painter->translate( 6, 7 );
 
         // render background
         const QColor backgroundColor( this->backgroundColor() );
@@ -267,7 +267,7 @@ namespace Breeze
                             painter->setPen( Qt::NoPen );
                             pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
+                            painter->drawEllipse( QRectF( -5, -5, 28, 28 ) );
                         }
                         painter->setPen( pen );
                         if (isHovered())
@@ -327,7 +327,7 @@ namespace Breeze
                             painter->setPen( Qt::NoPen );
                             pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
+                            painter->drawEllipse( QRectF( -5, -5, 28, 28 ) );
                         }
 
                         if (isHovered())
@@ -401,7 +401,7 @@ namespace Breeze
                             painter->setPen( Qt::NoPen );
                             pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
+                            painter->drawEllipse( QRectF( -5, -5, 28, 28 ) );
                         }
 
                         if (isHovered())
@@ -1038,7 +1038,7 @@ namespace Breeze
             if( isPressed() ) {
 
                 // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
-                if( type() == DecorationButtonType::Close ) return QColor(204, 51, 51, 180);
+                if( type() == DecorationButtonType::Close ) return QColor(123, 48, 56);
                 else
                 {
                     QColor col;
@@ -1067,7 +1067,7 @@ namespace Breeze
                 {
 
                     // QColor color( c->color( ColorGroup::Warning, ColorRole::Foreground ) );
-                    QColor color(204, 51, 51, 180);
+                    QColor color(123, 48, 56);
                     color.setAlpha( color.alpha()*m_opacity );
                     return color;
 
@@ -1086,7 +1086,7 @@ namespace Breeze
             } else if( isHovered() ) {
 
                 // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
-                if( type() == DecorationButtonType::Close ) return QColor(204, 51, 51, 180);
+                if( type() == DecorationButtonType::Close ) return QColor(123, 48, 56);
                 else
                 {
 

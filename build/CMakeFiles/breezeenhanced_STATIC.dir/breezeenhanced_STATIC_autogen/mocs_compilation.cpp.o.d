@@ -466,6 +466,9 @@ CMakeFiles/breezeenhanced_STATIC.dir/breezeenhanced_STATIC_autogen/mocs_compilat
  /usr/include/qt6/QtWidgets/QWidget \
  /usr/include/KF6/KConfigCore/KSharedConfig \
  /usr/include/KF6/KConfigCore/ksharedconfig.h \
+ /usr/include/qt6/QtGui/qtextcursor.h \
+ /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
+ /usr/include/qt6/QtGui/qtextoption.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \
  /home/rtx/Desktop/BreezeEnhanced-master/build/breezeenhanced_STATIC_autogen/IJHAR2IVER/moc_breezedetectwidget.cpp \
  /home/rtx/Desktop/BreezeEnhanced-master/build/breezeenhanced_STATIC_autogen/IJHAR2IVER/../../../config/breezedetectwidget.h \
@@ -482,8 +485,5 @@ CMakeFiles/breezeenhanced_STATIC.dir/breezeenhanced_STATIC_autogen/mocs_compilat
  /usr/include/qt6/QtWidgets/qdialogbuttonbox.h \
  /usr/include/qt6/QtWidgets/QLineEdit \
  /usr/include/qt6/QtWidgets/qlineedit.h \
- /usr/include/qt6/QtGui/qtextcursor.h \
- /usr/include/qt6/QtGui/qtextformat.h /usr/include/qt6/QtGui/qpen.h \
- /usr/include/qt6/QtGui/qtextoption.h \
  /usr/include/qt6/QtWidgets/QCheckBox /usr/include/qt6/QtCore/QMap \
  /home/rtx/Desktop/BreezeEnhanced-master/build/breezeenhanced_STATIC_autogen/IJHAR2IVER/moc_breezeexceptionlistwidget.cpp

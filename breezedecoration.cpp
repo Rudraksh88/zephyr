@@ -523,15 +523,28 @@ namespace Breeze
         const auto s = settings();
 
         // adjust button position
-        const int bHeight = captionHeight() + (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0);
+        const int bHeight = buttonHeight(); //captionHeight() + (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0);
         const int bWidth = buttonHeight();
-        const int verticalOffset = (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0) + (captionHeight()-buttonHeight())/2;
+        // const int verticalOffset = (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0) + (captionHeight()-buttonHeight())/2; // Default
+        const int verticalOffset = (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin : 0) + (captionHeight()-buttonHeight())/2;
+        // const int verticalOffset = (isTopEdge() ? Metrics::TitleBar_TopMargin:0) + (captionHeight()-buttonHeight())/2;
+
         const auto buttonList = m_leftButtons->buttons() + m_rightButtons->buttons();
         for (const QPointer<KDecoration2::DecorationButton> &button : buttonList)
         {
-            button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth, bHeight)));
-            static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset));
+            button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 7, bHeight + 7))); // bHeight + 5 adds more height to the button
+            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-3.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 1.6));
             static_cast<Button *>(button.data())->setIconSize(QSize(bWidth, bWidth));
+        }
+
+        // Add vertical spacing to the icon on the left
+        if( !m_leftButtons->buttons().isEmpty() )
+        {
+            auto button = static_cast<Button *>(m_leftButtons->buttons().front());
+            button->setOffset(QPointF(0, verticalOffset + 1));
+
+            // Right padding of the left button
+            button->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 3, bHeight + 7))); // + 3 is the right padding
         }
 
         // left buttons
@@ -549,7 +562,7 @@ namespace Breeze
             {
                 // add offsets on the side buttons, to preserve padding, but satisfy Fitts law
                 auto button = static_cast<Button *>(m_leftButtons->buttons().front());
-                button->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth + hPadding, bHeight ) ) );
+                button->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth + hPadding + 3, bHeight ) ) );
                 button->setFlag( Button::FlagFirstInList );
                 button->setHorizontalOffset( hPadding );
 
@@ -567,12 +580,16 @@ namespace Breeze
             m_rightButtons->setSpacing(m_internalSettings->buttonSpacing());
 
             // padding
-            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin;
-            const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin;
+            // const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin; // Default
+            // const int vPadding = isTopEdge() ? 0 : Metrics::TitleBar_TopMargin + 1;
+            const int vPadding = isTopEdge() ? 0 : Metrics::TitleBar_TopMargin;
+
+            // const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin;
+            const int hPadding = Metrics::TitleBar_SideMargin;
             if( isRightEdge() )
             {
                 auto button = static_cast<Button *>(m_rightButtons->buttons().back());
-                button->setGeometry(QRectF(QPoint(0, 0), QSizeF( bWidth + hPadding, bHeight)));
+                button->setGeometry(QRectF(QPoint(0, 0), QSizeF( bWidth + hPadding + 8, bHeight + 10)));
                 button->setFlag(Button::FlagLastInList);
 
                 m_rightButtons->setPos(QPointF(size().width() - m_rightButtons->geometry().width(), vPadding));
@@ -722,7 +739,7 @@ namespace Breeze
             case InternalSettings::ButtonTiny: return baseSize;
             case InternalSettings::ButtonSmall: return baseSize*1.8;
             default:
-            case InternalSettings::ButtonDefault: return baseSize*1.8; // default 2
+            case InternalSettings::ButtonDefault: return baseSize*1.6; // default 2
             case InternalSettings::ButtonLarge: return baseSize*2.5;
             case InternalSettings::ButtonVeryLarge: return baseSize*3.5;
         }
