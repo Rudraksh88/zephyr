@@ -220,7 +220,11 @@ namespace Breeze
             QPen pen( foregroundColor );
             pen.setCapStyle( Qt::RoundCap );
             pen.setJoinStyle( Qt::MiterJoin );
-            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+
+            // setup pen width
+            const double STROKE_WIDTH = 2;
+
+            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
 
             switch( type() )
             {
@@ -261,14 +265,14 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
                             painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
                         }
                         painter->setPen( pen );
                         if (isHovered())
-                            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
-                        pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
+                        pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
 
                         painter->drawLine( QPointF( 5, 5 ), QPointF( 13, 13 ) ); //
@@ -321,15 +325,15 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
                             painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
                         }
 
                         if (isHovered())
-                            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setPen( pen );
-                        pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                        pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
 
                         // painter->drawPolyline(QPolygonF()
@@ -395,15 +399,15 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
                             painter->drawEllipse( QRectF( -2, -2, 22, 22 ) );
                         }
 
                         if (isHovered())
-                            pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setPen( pen );
-                        pen.setWidthF( 1.5*qMax((qreal)1.0, 20/width ) );
+                        pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
 
                         // painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
@@ -1040,10 +1044,10 @@ namespace Breeze
                     QColor col;
                     // If the titlebar is light, the button should be dark
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(255, 255, 255, 85); // This is the color of the button when it is pressed
+                        col = QColor(255, 255, 255, 65); // This is the color of the button when it is pressed
                     // If the titlebar is dark, the button should be light
                     else
-                        col = QColor(255, 255, 255, 85); // This is the color of the button when it is pressed
+                        col = QColor(64,64,64); // This is the color of the button when it is pressed
                     return col;
                 }
 
@@ -1053,7 +1057,8 @@ namespace Breeze
                     if (qGray(d->titleBarColor().rgb()) > 100)
                         col = QColor(255, 255, 255, 180);
                     else
-                        col = QColor(255, 255, 255, 180);
+                        // col = QColor(255, 255, 255, 180);
+                        col = QColor(64,64,64);
                     return col;
 
             } else if( m_animation->state() == QAbstractAnimation::Running ) {
@@ -1072,7 +1077,7 @@ namespace Breeze
                     if (qGray(d->titleBarColor().rgb()) > 100)
                         col = QColor(0, 0, 0, 165);
                     else
-                        col = QColor(255, 255, 255, 65);
+                        col = QColor(64,64,64);
                     col.setAlpha( col.alpha()*m_opacity );
                     return col;
 
@@ -1093,7 +1098,7 @@ namespace Breeze
 
                     // If the titlebar is dark, the button should be light
                     else
-                        col = QColor(255, 255, 255, 50); // This is the color of the button when it is hovered
+                        col = QColor(64,64,64); // This is the color of the button when it is hovered
                     return col;
 
                 }
@@ -1101,6 +1106,7 @@ namespace Breeze
             } else {
 
                 return QColor();
+                // return QColor(64,64,64); // Gives permanent color to the button
 
             }
         }
