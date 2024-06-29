@@ -532,7 +532,8 @@ namespace Breeze
         const auto buttonList = m_leftButtons->buttons() + m_rightButtons->buttons();
         for (const QPointer<KDecoration2::DecorationButton> &button : buttonList)
         {
-            button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 7, bHeight + 7))); // bHeight + 5 adds more height to the button
+            button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 10, bHeight + 7))); // bHeight + 5 adds more height to the button
+
             isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-3.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 1.6));
             static_cast<Button *>(button.data())->setIconSize(QSize(bWidth, bWidth));
         }
@@ -737,9 +738,9 @@ namespace Breeze
         switch( m_internalSettings->buttonSize() )
         {
             case InternalSettings::ButtonTiny: return baseSize;
-            case InternalSettings::ButtonSmall: return baseSize*1.8;
+            case InternalSettings::ButtonSmall: return baseSize*1.45;
             default:
-            case InternalSettings::ButtonDefault: return baseSize*1.6; // default 2
+            case InternalSettings::ButtonDefault: return baseSize*1.8; // default 2
             case InternalSettings::ButtonLarge: return baseSize*2.5;
             case InternalSettings::ButtonVeryLarge: return baseSize*3.5;
         }
