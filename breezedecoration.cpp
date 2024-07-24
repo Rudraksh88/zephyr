@@ -534,7 +534,7 @@ namespace Breeze
         {
             button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 10, bHeight + 7))); // bHeight + 5 adds more height to the button
 
-            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-3.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 1.6));
+            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-2.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 1.8));
             static_cast<Button *>(button.data())->setIconSize(QSize(bWidth, bWidth));
         }
 
@@ -590,7 +590,7 @@ namespace Breeze
             if( isRightEdge() )
             {
                 auto button = static_cast<Button *>(m_rightButtons->buttons().back());
-                button->setGeometry(QRectF(QPoint(0, 0), QSizeF( bWidth + hPadding + 8, bHeight + 10)));
+                button->setGeometry(QRectF(QPoint(0, 0), QSizeF( bWidth + hPadding + 10, bHeight + 10)));
                 button->setFlag(Button::FlagLastInList);
 
                 m_rightButtons->setPos(QPointF(size().width() - m_rightButtons->geometry().width(), vPadding));
@@ -680,7 +680,10 @@ namespace Breeze
         }
         else
         {
-            QColor titleBarColor(this->titleBarColor());
+            // QColor titleBarColor(this->titleBarColor());
+            // Make the titlebar color #1e1e20ff for active and #1e1e20aa for inactive
+            QColor titleBarColor(c->isActive() ? QColor(30, 30, 32, 255) : QColor(30, 30, 32, 170));
+
             titleBarColor.setAlpha(titleBarAlpha());
 
             QLinearGradient gradient(0, 0, 0, titleRect.height());
