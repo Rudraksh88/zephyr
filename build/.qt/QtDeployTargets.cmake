@@ -1,8 +1,0 @@
-set(__QT_DEPLOY_TARGET_breezeenhancedcommon6_FILE /home/rtx/Desktop/BreezeEnhanced-master/build/bin/libbreezeenhancedcommon6.so.6.0.0)
-set(__QT_DEPLOY_TARGET_breezeenhancedcommon6_TYPE SHARED_LIBRARY)
-set(__QT_DEPLOY_TARGET_kcm_breezeenhanced_FILE /home/rtx/Desktop/BreezeEnhanced-master/build/bin/org.kde.kdecoration2.kcm/kcm_breezeenhanced.so)
-set(__QT_DEPLOY_TARGET_kcm_breezeenhanced_TYPE MODULE_LIBRARY)
-set(__QT_DEPLOY_TARGET_breezeenhanced_STATIC_FILE /home/rtx/Desktop/BreezeEnhanced-master/build/lib/libbreezeenhanced_STATIC.a)
-set(__QT_DEPLOY_TARGET_breezeenhanced_STATIC_TYPE STATIC_LIBRARY)
-set(__QT_DEPLOY_TARGET_breezeenhanced_FILE /home/rtx/Desktop/BreezeEnhanced-master/build/bin/breezeenhanced.so)
-set(__QT_DEPLOY_TARGET_breezeenhanced_TYPE MODULE_LIBRARY)
