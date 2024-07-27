@@ -556,7 +556,7 @@ namespace Breeze
             m_leftButtons->setSpacing(m_internalSettings->buttonSpacing());
 
             // padding
-            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin;
+            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin - 1;
             const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin;
 
             if( isLeftEdge() )
@@ -567,7 +567,7 @@ namespace Breeze
                 button->setFlag( Button::FlagFirstInList );
                 button->setHorizontalOffset( hPadding );
 
-                m_leftButtons->setPos(QPointF(0, vPadding));
+                m_leftButtons->setPos(QPointF(0, vPadding - 1));
 
             } else m_leftButtons->setPos(QPointF(hPadding + borderLeft(), vPadding));
 

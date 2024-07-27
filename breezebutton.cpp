@@ -442,7 +442,7 @@ namespace Breeze
                         // painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
 
                         // Draw a line at the base of the maximize square
-                        painter->drawLine( QPointF( 5, 10 ), QPointF( 14, 10 ) );
+                        painter->drawLine( QPointF( 6, 10 ), QPointF( 15, 10 ) );
 
                         if (isHovered())
                             pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
@@ -708,8 +708,10 @@ namespace Breeze
                         if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
+
+                            // Make the color white if hovered or pressed or checked
+                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
+                            pen.setColor( QColor(255, 255, 255) );
                         }
                         painter->setPen( pen );
                         painter->setBrush( Qt::NoBrush );
@@ -726,15 +728,17 @@ namespace Breeze
                                 << QPointF( 12, 12 ) );
                         }
                         else {
-                            painter->drawPolyline( QPolygonF()
-                                << QPointF( 5, 9 )
-                                << QPointF( 9, 5 )
-                                << QPointF( 13, 9 ) );
+                            // Just draw two slashes like //
 
-                            painter->drawPolyline( QPolygonF()
-                                << QPointF( 5, 13 )
-                                << QPointF( 9, 9 )
-                                << QPointF( 13, 13 ) );
+                            painter->drawPolyline( QPolygonF() // first slash
+                                << QPointF( 8, 12 ) // bottom left
+                                << QPointF( 13, 5 ) // top right
+                            );
+
+                            painter->drawPolyline( QPolygonF() // second slash
+                                << QPointF( 13, 12 ) // bottom left
+                                << QPointF( 18, 5 ) // top right
+                            );
                         }
                     }
                     break;
