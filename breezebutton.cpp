@@ -287,9 +287,9 @@ namespace Breeze
 
                         // Use polyline to draw an X
                         painter->drawPolyline(QPolygonF()
-                                              << QPointF(5, 5) << QPointF(13, 13));
+                                              << QPointF(5, 4) << QPointF(13, 12));
                         painter->drawPolyline(QPolygonF()
-                                                << QPointF(5, 13) << QPointF(13, 5));
+                                                << QPointF(5, 12) << QPointF(13, 4));
                     }
                     break;
                 }
@@ -375,12 +375,12 @@ namespace Breeze
                             //                       << QPointF(8, 5) << QPointF(14, 5) << QPointF(14, 10));
 
                             painter->drawPolyline(QPolygonF()
-                                                  << QPointF(7, 4.5) << QPointF(13.5, 4.5) << QPointF(13.5, 10.5));
+                                                  << QPointF(7, 3.5) << QPointF(13.5, 3.5) << QPointF(13.5, 9.5));
 
 
-                            painter->drawRect(QRectF(4.0, 7.0, 7.0, 7.0)); // x,y,w,h
+                            painter->drawRect(QRectF(4.0, 6, 7.0, 7.0)); // x,y,w,h
                         } else {
-                            painter->drawRect(QRectF(5.0, 5.0, 8.0, 8.0));
+                            painter->drawRect(QRectF(5.0, 4, 8.0, 8.0));
                         }
 
 
@@ -445,7 +445,7 @@ namespace Breeze
                         // painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
 
                         // Draw a line at the base of the maximize square
-                        painter->drawLine( QPointF( 6, 9.5 ), QPointF( 15, 9.5 ) );
+                        painter->drawLine( QPointF( 6, 8.5 ), QPointF( 15, 8.5 ) );
 
                         // if (isHovered())
                         //     pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
@@ -734,13 +734,13 @@ namespace Breeze
                             // Just draw two slashes like //
 
                             painter->drawPolyline( QPolygonF() // first slash
-                                << QPointF( 8, 12 ) // bottom left
-                                << QPointF( 13, 5 ) // top right
+                                << QPointF( 8, 11 ) // bottom left
+                                << QPointF( 13, 4 ) // top right
                             );
 
                             painter->drawPolyline( QPolygonF() // second slash
-                                << QPointF( 13, 12 ) // bottom left
-                                << QPointF( 18, 5 ) // top right
+                                << QPointF( 13, 11 ) // bottom left
+                                << QPointF( 18, 4 ) // top right
                             );
                         }
                     }
