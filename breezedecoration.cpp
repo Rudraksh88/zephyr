@@ -352,7 +352,7 @@ namespace Breeze
             top += baseSize*Metrics::TitleBar_BottomMargin + (c->isShaded() ? 0 : 1);
 
             // padding above
-            top += baseSize*Metrics::TitleBar_TopMargin;
+            top += baseSize*Metrics::TitleBar_TopMargin - 1; // Titlebar vertical padding
         }
 
         setBorders(QMargins(left, top, right, bottom));
@@ -682,7 +682,8 @@ namespace Breeze
         {
             // QColor titleBarColor(this->titleBarColor());
             // Make the titlebar color #1e1e20ff for active and #1e1e20aa for inactive
-            QColor titleBarColor(c->isActive() ? QColor(30, 30, 32, 255) : QColor(30, 30, 32, 170));
+            // QColor titleBarColor(c->isActive() ? QColor(30, 30, 32, 255) : QColor(30, 30, 32, 170));
+            QColor titleBarColor(c->isActive() ? QColor(26, 26, 26, 255) : QColor(26, 26, 26, 170));
 
             titleBarColor.setAlpha(titleBarAlpha());
 
@@ -724,7 +725,9 @@ namespace Breeze
         // KDE needs this FIXME: Why?
         QFontDatabase fd; f.setStyleName(fd.styleString(f));
         painter->setFont(f);
-        painter->setPen( fontColor() );
+        painter->setPen( fontColor() ); // This sets the color for window title
+        // painter->setPen( QColor(255, 255, 255, 150) ); // A more lighter color for window title
+
         const auto cR = captionRect();
         const QString caption = painter->fontMetrics().elidedText(c->caption(), Qt::ElideMiddle, cR.first.width());
         painter->drawText(cR.first, cR.second | Qt::TextSingleLine, caption);

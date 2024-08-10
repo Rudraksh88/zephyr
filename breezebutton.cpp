@@ -272,14 +272,11 @@ namespace Breeze
 
                         // Change the color of the pen to white on hover
                         painter->setPen( pen );
+
                         if (isHovered()) {
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) ); // XXX
-                            // pen.setColor( QColor(255, 255, 255, 255) );
+                            pen.setColor( QColor(255, 255, 255, 255) );
                             painter->setPen( pen );
                             painter->setBrush( Qt::NoBrush );
-
-                            painter->drawLine( QPointF( 5, 5 ), QPointF( 13, 13 ) );
-                            painter->drawLine( QPointF( 5, 13 ), QPointF( 13, 5 ) );
                         }
 
                         pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
@@ -372,18 +369,24 @@ namespace Breeze
 
                         // Just draw a square for now for maximize
 
-
+                        // Checked means the window is maximized
                         if (isChecked()) {
+                            // painter->drawPolyline(QPolygonF()
+                            //                       << QPointF(8, 5) << QPointF(14, 5) << QPointF(14, 10));
+
                             painter->drawPolyline(QPolygonF()
-                                                  << QPointF(8, 5) << QPointF(14, 5) << QPointF(14, 10));
-                            painter->drawRect(QRectF(5.0, 7.0, 7.0, 7.0));
+                                                  << QPointF(7, 4.5) << QPointF(13.5, 4.5) << QPointF(13.5, 10.5));
+
+
+                            painter->drawRect(QRectF(4.0, 7.0, 7.0, 7.0)); // x,y,w,h
                         } else {
                             painter->drawRect(QRectF(5.0, 5.0, 8.0, 8.0));
                         }
 
 
-                        if (isHovered())
-                            pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
+                        // if (isHovered())
+                        //     // pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
+                        //     pen.setWidthF( STROKE_WIDTH_HOVER*qMax((qreal)1.0, 20/width ) );
                     }
                     break;
                 }
@@ -442,10 +445,10 @@ namespace Breeze
                         // painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
 
                         // Draw a line at the base of the maximize square
-                        painter->drawLine( QPointF( 6, 10 ), QPointF( 15, 10 ) );
+                        painter->drawLine( QPointF( 6, 9.5 ), QPointF( 15, 9.5 ) );
 
-                        if (isHovered())
-                            pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
+                        // if (isHovered())
+                        //     pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
                     }
                     break;
                 }
@@ -874,27 +877,35 @@ namespace Breeze
                 && m_animation->state() != QAbstractAnimation::Running)
             {
                 int v = qGray(inactiveCol.rgb());
-                if (v > 127) v = 150;
-                else v = 150;
-                col = QColor(v, v, v);
+                if (v > 127) v = 255;
+                else v = 255;
+                // col = QColor(v, v, v); previous v = 150
+                col = QColor(v, v, v, 125);
             }
             else
             {
                 if (d && qGray(d->titleBarColor().rgb()) > 100)
-                    col = QColor(150, 150, 150);
+                    // col = QColor(150, 150, 150);
+
+                    // White color with a bit of transparency
+                    col = QColor(255, 255, 255, 125);
+
                 else
-                    col = QColor(150, 150, 150);
+                    // col = QColor(150, 150, 150);
+                    col = QColor(255, 255, 255, 125);
             }
             return col;
         }
         else if( !d ) {
             // Make colors white no matter what
-            return QColor(150, 150, 150);
+            // return QColor(150, 150, 150);
+            return QColor(255, 255, 255, 125);
 
         } else if( isPressed() ) {
 
             // return d->titleBarColor();
-            return QColor(150, 150, 150);
+            // return QColor(150, 150, 150);
+            return QColor(255, 255, 255, 100);
 
         /*} else if( type() == DecorationButtonType::Close && d->internalSettings()->outlineCloseButton() ) {
 
@@ -903,28 +914,32 @@ namespace Breeze
         } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove ) && isChecked() ) {
 
             // return d->titleBarColor();
-            return QColor(150, 150, 150);
+            // return QColor(150, 150, 150);
+            return QColor(255, 255, 255, 125);
 
         } else if( m_animation->state() == QAbstractAnimation::Running ) {
 
             // return KColorUtils::mix( d->fontColor(), d->titleBarColor(), m_opacity );
-            return QColor(150, 150, 150);
+            // return QColor(150, 150, 150);
+            return QColor(255, 255, 255, 125);
 
         } else if( isHovered() ) {
-
+            // For other buttons, hover is controlled in their respective DecorationButtonType cases
             // If its a close button, make the color white
-            if (type() == DecorationButtonType::Close) {
-                return QColor(255,255,255);
-            }
+            // if (type() == DecorationButtonType::Close) {
+            //     return QColor(255,255,255);
+            // }
 
             // return d->titleBarColor();
-            return QColor(150, 150, 150);
+            // return QColor(150, 150, 150);
+            return QColor(255, 255, 255, 1);
 
 
         } else {
 
             // return d->fontColor();
-            return QColor(150, 150, 150);
+            // return QColor(150, 150, 150);
+            return QColor(255, 255, 255, 125);
         }
 
     }
@@ -978,7 +993,7 @@ namespace Breeze
                 }
                 if (col.isValid())
                     return col;
-                else return KColorUtils::mix( d->titleBarColor(), d->fontColor(), 0.3 );
+                else return KColorUtils::mix( d->titleBarColor(), d->fontColor(), 1 ); // was 0.3
 
             } else if( m_animation->state() == QAbstractAnimation::Running ) {
 
@@ -1094,9 +1109,9 @@ namespace Breeze
 
                     QColor col;
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(255, 255, 255, 180);
+                        col = QColor(255, 255, 255, 125);
                     else
-                        // col = QColor(255, 255, 255, 180);
+                        // col = QColor(255, 255, 255, 125);
                         col = QColor(64,64,64);
                     return col;
 
