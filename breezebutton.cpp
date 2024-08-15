@@ -265,7 +265,7 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
+                            // pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
                             // painter->drawEllipse( QRectF( -2, -2, 23, 23 ) );
                         }
@@ -275,6 +275,12 @@ namespace Breeze
 
                         if (isHovered()) {
                             pen.setColor( QColor(255, 255, 255, 255) );
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
+                        }
+
+                        if (isPressed()) {
+                            pen.setColor( QColor(255, 255, 255, 160) );
                             painter->setPen( pen );
                             painter->setBrush( Qt::NoBrush );
                         }
@@ -346,7 +352,7 @@ namespace Breeze
                         }
 
                         // Add some spacing to the right of Maximize button
-                        painter->translate( 1.5, 0 );
+                        painter->translate( 1.8, 0 ); // was 1.5
 
                         if (isHovered()) {
                             pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) ); // XXX
@@ -354,8 +360,15 @@ namespace Breeze
                             pen.setColor( QColor(255, 255, 255) );
                         }
 
+                        if (isPressed()) {
+                            pen.setColor( QColor(255, 255, 255, 160) );
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
+                        }
+
                         painter->setPen( pen );
                         pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
+
                         painter->setBrush( Qt::NoBrush );
 
                         // painter->drawPolyline(QPolygonF()
@@ -436,6 +449,12 @@ namespace Breeze
                             pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) ); // XXX
                             // Change the color of the pen to white
                             pen.setColor( QColor(255, 255, 255) );
+                        }
+
+                        if (isPressed()) {
+                            pen.setColor( QColor(255, 255, 255, 160) );
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
                         }
 
                         painter->setPen( pen );
@@ -708,7 +727,7 @@ namespace Breeze
                         }
                     }
                     if (!macOSBtn || isPressed() || isHovered() || isChecked()) {
-                        if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
+                        if( (!macOSBtn  || isChecked()) && backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
 
@@ -732,6 +751,12 @@ namespace Breeze
                         }
                         else {
                             // Just draw two slashes like //
+
+                            if (isPressed()) {
+                                pen.setColor( QColor(255, 255, 255, 160) );
+                                painter->setPen( pen );
+                                painter->setBrush( Qt::NoBrush );
+                            }
 
                             painter->drawPolyline( QPolygonF() // first slash
                                 << QPointF( 8, 11 ) // bottom left
