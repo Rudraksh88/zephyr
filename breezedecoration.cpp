@@ -47,7 +47,7 @@
 
 #include <cmath>
 
-K_PLUGIN_FACTORY_WITH_JSON(BreezeDecoFactory, "breezeenhanced.json", registerPlugin<Breeze::Decoration>(); registerPlugin<Breeze::Button>();)
+K_PLUGIN_FACTORY_WITH_JSON(BreezeDecoFactory, "zephyr.json", registerPlugin<Breeze::Decoration>(); registerPlugin<Breeze::Button>();)
 
 namespace
 {
@@ -534,7 +534,7 @@ namespace Breeze
         {
             button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 10, bHeight + 7))); // bHeight + 5 adds more height to the button
 
-            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-2.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 1.8));
+            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-2.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 2.6)); //1.8
             static_cast<Button *>(button.data())->setIconSize(QSize(bWidth, bWidth));
         }
 

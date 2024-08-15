@@ -2,12 +2,12 @@
     "KPlugin": {
         "Description": "Modify the appearance of window decorations",
         "Icon": "preferences-system-windows",
-        "Name": "BreezeEnhanced Window Decoration",
+        "Name": "Zephyr Window Decoration",
         "ServiceTypes": [
             "KCModule"
         ]
     },
-    "X-KDE-Keywords": "BreezeEnhanced,decoration",
+    "X-KDE-Keywords": "Zephyr,decoration",
     "X-KDE-ParentApp": "kcontrol",
     "X-KDE-Weight": 60
 }

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-project(breezeenhanced)
+project(zephyr)
 set(PROJECT_VERSION "6.0.0")
 set(PROJECT_VERSION_MAJOR 6)
 
@@ -81,11 +81,11 @@ target_link_libraries(breezeenhanced_STATIC
 )
 
 ### build library
-add_library(breezeenhanced MODULE
+add_library(zephyr MODULE
     ${breezeenhanced_SRCS}
     ${breezeenhanced_config_PART_FORMS_HEADERS})
 
-target_link_libraries(breezeenhanced
+target_link_libraries(zephyr
     PRIVATE
         breezeenhancedcommon6
         breezeenhanced_STATIC
@@ -95,6 +95,6 @@ target_link_libraries(breezeenhanced
         KF6::KCMUtils)
 
 
-install(TARGETS breezeenhanced DESTINATION ${KDE_INSTALL_PLUGINDIR}/${KDECORATION_PLUGIN_DIR})
+install(TARGETS zephyr DESTINATION ${KDE_INSTALL_PLUGINDIR}/${KDECORATION_PLUGIN_DIR})
 
 add_subdirectory(config)

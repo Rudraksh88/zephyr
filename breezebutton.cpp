@@ -222,7 +222,7 @@ namespace Breeze
             pen.setJoinStyle( Qt::MiterJoin );
 
             // setup pen width
-            const double STROKE_WIDTH = 1.5; // Thin was 1.3
+            const double STROKE_WIDTH = 1.6; // Thin was 1.3
 
             pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
 
