@@ -265,9 +265,7 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            // pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            // painter->drawEllipse( QRectF( -2, -2, 23, 23 ) );
                         }
 
                         // Change the color of the pen to white on hover
@@ -285,11 +283,7 @@ namespace Breeze
                             painter->setBrush( Qt::NoBrush );
                         }
 
-                        pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
-
-                        // painter->drawLine( QPointF( 5, 5 ), QPointF( 13, 13 ) ); //
-                        // painter->drawLine( QPointF( 5, 13 ), QPointF( 13, 5 ) ); // /
 
                         // Use polyline to draw an X
                         painter->drawPolyline(QPolygonF()
@@ -344,49 +338,29 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            // painter->drawEllipse( QRectF( -2, -2, 23, 23 ) );
-                            // Fill a rectangle instead of an ellipse
-                            // painter->drawRect( QRectF( -2, -2, 27, 23 ) );
                         }
 
-                        // Add some spacing to the right of Maximize button
+                        // Add/Remove some spacing to the right of Maximize button by translating
                         painter->translate( 1.8, 0 ); // was 1.5
 
                         if (isHovered()) {
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) ); // XXX
                             // Change the color of the pen to white
                             pen.setColor( QColor(255, 255, 255) );
                         }
 
                         if (isPressed()) {
+                            // Darken the color of the pen
                             pen.setColor( QColor(255, 255, 255, 160) );
-                            painter->setPen( pen );
-                            painter->setBrush( Qt::NoBrush );
                         }
 
                         painter->setPen( pen );
-                        pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
-
                         painter->setBrush( Qt::NoBrush );
-
-                        // painter->drawPolyline(QPolygonF()
-                        //                         << QPointF(5, 8) << QPointF(5, 13) << QPointF(10, 13));
-                        // if (isChecked())
-                        //     painter->drawRect(QRectF(8.0, 5.0, 5.0, 5.0));
-                        // else {
-                        //     painter->drawPolyline(QPolygonF()
-                        //                           << QPointF(8, 5) << QPointF(13, 5) << QPointF(13, 10));
-                        // }
 
                         // Just draw a square for now for maximize
 
                         // Checked means the window is maximized
                         if (isChecked()) {
-                            // painter->drawPolyline(QPolygonF()
-                            //                       << QPointF(8, 5) << QPointF(14, 5) << QPointF(14, 10));
-
                             painter->drawPolyline(QPolygonF()
                                                   << QPointF(7, 3.5) << QPointF(13.5, 3.5) << QPointF(13.5, 9.5));
 
@@ -395,11 +369,6 @@ namespace Breeze
                         } else {
                             painter->drawRect(QRectF(5.0, 4, 8.0, 8.0));
                         }
-
-
-                        // if (isHovered())
-                        //     // pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
-                        //     pen.setWidthF( STROKE_WIDTH_HOVER*qMax((qreal)1.0, 20/width ) );
                     }
                     break;
                 }
@@ -440,34 +409,23 @@ namespace Breeze
                         if( backgroundColor.isValid() )
                         {
                             painter->setPen( Qt::NoPen );
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                             painter->setBrush( backgroundColor );
-                            // painter->drawEllipse( QRectF( -2, -2, 23, 23 ) );
                         }
 
                         if (isHovered()) {
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) ); // XXX
                             // Change the color of the pen to white
                             pen.setColor( QColor(255, 255, 255) );
                         }
 
                         if (isPressed()) {
                             pen.setColor( QColor(255, 255, 255, 160) );
-                            painter->setPen( pen );
-                            painter->setBrush( Qt::NoBrush );
                         }
 
                         painter->setPen( pen );
-                        pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
                         painter->setBrush( Qt::NoBrush );
-
-                        // painter->drawLine( QPointF( 4, 9 ), QPointF( 14, 9 ) );
 
                         // Draw a line at the base of the maximize square
                         painter->drawLine( QPointF( 6, 8.5 ), QPointF( 15, 8.5 ) );
-
-                        // if (isHovered())
-                        //     pen.setWidthF( PenWidth::Symbol*qMax((qreal)1.0, 20/width ) );
                     }
                     break;
                 }
@@ -729,10 +687,7 @@ namespace Breeze
                     if (!macOSBtn || isPressed() || isHovered() || isChecked()) {
                         if( (!macOSBtn  || isChecked()) && backgroundColor.isValid() )
                         {
-                            painter->setPen( Qt::NoPen );
-
-                            // Make the color white if hovered or pressed or checked
-                            pen.setWidthF( STROKE_WIDTH*qMax((qreal)1.0, 20/width ) );
+                            // Make the color white if hovered or checked
                             pen.setColor( QColor(255, 255, 255) );
                         }
                         painter->setPen( pen );
