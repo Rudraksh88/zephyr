@@ -466,49 +466,44 @@ namespace Breeze
                             }
                         }
                     }
-                    if (!macOSBtn || isPressed() || isHovered() || isChecked()) {
-                        painter->setPen( Qt::NoPen );
-                        // if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
-                        // {
-                        //     painter->setBrush( backgroundColor );
-                        //     painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
-                        // }
-                        painter->setBrush( foregroundColor );
+                    if (!macOSBtn) {
+                        painter->setPen(pen);
 
-                        if (macOSBtn)
-                            painter->drawEllipse( QRectF( 6, 6, 6, 6 ) );
-                        else {
-                            if( isChecked()) {
+                        QColor circleColor(255, 255, 255, 125); // Default color
 
-                                // outer ring
-                                painter->drawEllipse( QRectF( 3, 3, 12, 12 ) );
-
-                                // center dot
-                                QColor backgroundColor( this->backgroundColor() );
-                                if( !backgroundColor.isValid() && d ) backgroundColor = d->titleBarColor();
-
-                                if( backgroundColor.isValid() )
-                                {
-                                    painter->setBrush( backgroundColor );
-                                    painter->drawEllipse( QRectF( 8, 8, 2, 2 ) );
-                                }
-
-                            } else {
-
-                                // painter->drawPolygon( QPolygonF()
-                                //     << QPointF( 6.5, 8.5 )
-                                //     << QPointF( 12, 3 )
-                                //     << QPointF( 15, 6 )
-                                //     << QPointF( 9.5, 11.5 ) );
-
-                                // painter->setPen( pen );
-                                // painter->drawLine( QPointF( 5.5, 7.5 ), QPointF( 10.5, 12.5 ) );
-                                // painter->drawLine( QPointF( 12, 6 ), QPointF( 4.5, 13.5 ) );
-
-                                // Draw a solid circle
-                                painter->drawEllipse( QRectF( 5, 4, 8, 8 ) );
-                            }
+                        if (isPressed()) {
+                            circleColor = QColor(255, 255, 255, 160);
+                        } else if (isHovered() || isChecked()) {
+                            circleColor = QColor(255, 255, 255, 255);
                         }
+
+                        // Define the center and sizes for both circles
+                        qreal centerX = 8.0;
+                        qreal centerY = 7.5; // Midpoint between 4 and 11
+                        qreal largeCircleSize = 18.0;
+                        qreal smallCircleSize = 6.0;
+
+                        if (isChecked()) {
+                            // Draw the enlarged solid circle
+                            painter->setPen(Qt::NoPen);
+                            painter->setBrush(QColor(255, 255, 255, 30));
+                            painter->drawEllipse(QRectF(
+                                centerX - largeCircleSize / 2,
+                                centerY - largeCircleSize / 2,
+                                largeCircleSize,
+                                largeCircleSize
+                            ));
+                        }
+
+                        // Draw the inner solid circle
+                        painter->setPen(Qt::NoPen);
+                        painter->setBrush(circleColor);
+                        painter->drawEllipse(QRectF(
+                            centerX - smallCircleSize / 2,
+                            centerY - smallCircleSize / 2,
+                            smallCircleSize,
+                            smallCircleSize
+                        ));
                     }
                     break;
                 }
