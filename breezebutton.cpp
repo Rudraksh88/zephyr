@@ -829,12 +829,6 @@ namespace Breeze
                         }
                     }
                     if (!macOSBtn || isPressed() || isHovered()) {
-                        // if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
-                        // {
-                        //     painter->setPen( Qt::NoPen );
-                        //     painter->setBrush( backgroundColor );
-                        //     painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
-                        // }
                         painter->setPen( pen );
                         painter->setBrush( Qt::NoBrush );
 
@@ -844,10 +838,23 @@ namespace Breeze
                             painter->drawLine( QPointF( 4.5, 12 ), QPointF( 13.5, 12 ) );
                         }
                         else {
-                            // OG
-                            // painter->drawLine( QPointF( 3.5, 5 ), QPointF( 14.5, 5 ) );
-                            // painter->drawLine( QPointF( 3.5, 9 ), QPointF( 14.5, 9 ) );
-                            // painter->drawLine( QPointF( 3.5, 13 ), QPointF( 14.5, 13 ) );
+                            if( backgroundColor.isValid() )
+                            {
+                                painter->setPen( Qt::NoPen );
+                                painter->setBrush( backgroundColor );
+                            }
+
+                            if (isHovered()) {
+                                // Change the color of the pen to white
+                                pen.setColor( QColor(255, 255, 255) );
+                            }
+
+                            if (isPressed()) {
+                                pen.setColor( QColor(255, 255, 255, 160) );
+                            }
+
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
 
                             // New
                             painter->drawLine( QPointF( 5, 4 ), QPointF( 16, 4 ) );
