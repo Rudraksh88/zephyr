@@ -468,11 +468,11 @@ namespace Breeze
                     }
                     if (!macOSBtn || isPressed() || isHovered() || isChecked()) {
                         painter->setPen( Qt::NoPen );
-                        if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
-                        {
-                            painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
-                        }
+                        // if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
+                        // {
+                        //     painter->setBrush( backgroundColor );
+                        //     painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
+                        // }
                         painter->setBrush( foregroundColor );
 
                         if (macOSBtn)
@@ -495,15 +495,18 @@ namespace Breeze
 
                             } else {
 
-                                painter->drawPolygon( QPolygonF()
-                                    << QPointF( 6.5, 8.5 )
-                                    << QPointF( 12, 3 )
-                                    << QPointF( 15, 6 )
-                                    << QPointF( 9.5, 11.5 ) );
+                                // painter->drawPolygon( QPolygonF()
+                                //     << QPointF( 6.5, 8.5 )
+                                //     << QPointF( 12, 3 )
+                                //     << QPointF( 15, 6 )
+                                //     << QPointF( 9.5, 11.5 ) );
 
-                                painter->setPen( pen );
-                                painter->drawLine( QPointF( 5.5, 7.5 ), QPointF( 10.5, 12.5 ) );
-                                painter->drawLine( QPointF( 12, 6 ), QPointF( 4.5, 13.5 ) );
+                                // painter->setPen( pen );
+                                // painter->drawLine( QPointF( 5.5, 7.5 ), QPointF( 10.5, 12.5 ) );
+                                // painter->drawLine( QPointF( 12, 6 ), QPointF( 4.5, 13.5 ) );
+
+                                // Draw a solid circle
+                                painter->drawEllipse( QRectF( 5, 4, 8, 8 ) );
                             }
                         }
                     }
@@ -577,7 +580,7 @@ namespace Breeze
 
                 case DecorationButtonType::KeepBelow:
                 {
-                    bool macOSBtn(!d || d->internalSettings()->macOSButtons() || isChecked());
+                    bool macOSBtn(!d || d->internalSettings()->macOSButtons());
                     if (macOSBtn && !isPressed()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
@@ -612,37 +615,67 @@ namespace Breeze
                         }
                     }
                     if (!macOSBtn || isPressed() || isHovered() || isChecked()) {
-                        if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
+                        if( (!macOSBtn) && backgroundColor.isValid() )
                         {
-                            painter->setPen( Qt::NoPen );
-                            painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
+                            // Make the color white if hovered or checked
+                            if (!isHovered() && !isChecked()) {
+                                pen.setColor( QColor(255, 255, 255, 125) );
+                            } else if ( isPressed() && isChecked() ) {
+                                pen.setColor( QColor(255, 255, 255, 160) );
+
+                                painter->setPen( pen );
+                                painter->setBrush( Qt::NoBrush );
+
+                                // Add another slash
+                                painter->drawPolyline( QPolygonF() // first slash
+                                    << QPointF( 3, 4 ) // bottom left
+                                    << QPointF( 8, 11 ) // top right
+                                );
+                            } else if ( isChecked() ) {
+                                pen.setColor( QColor(255, 255, 255) );
+
+                                painter->setPen( pen );
+                                painter->setBrush( Qt::NoBrush );
+
+                                // Add another slash
+                                painter->drawPolyline( QPolygonF() // first slash
+                                    << QPointF( 3, 4 ) // bottom left
+                                    << QPointF( 8, 11 ) // top right
+                                );
+                            } else {
+                                pen.setColor( QColor(255, 255, 255) );
+                            }
+
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
+
+                            // // Add another slash
+                            // painter->drawPolyline( QPolygonF() // first slash
+                            //     << QPointF( 3, 11 ) // bottom left
+                            //     << QPointF( 8, 4 ) // top right
+                            // );
                         }
                         painter->setPen( pen );
-                        painter->setBrush( Qt::NoBrush );
+                        // painter->setBrush( Qt::NoBrush );
 
-                        if (macOSBtn) {
-                            painter->drawPolyline( QPolygonF()
-                                << QPointF( 6, 6 )
-                                << QPointF( 9, 9 )
-                                << QPointF( 12, 6 ) );
 
-                            painter->drawPolyline( QPolygonF()
-                                << QPointF( 6, 10 )
-                                << QPointF( 9, 13 )
-                                << QPointF( 12, 10 ) );
+                        // Just draw two backslashes
+
+                        if (isPressed()) {
+                            pen.setColor( QColor(255, 255, 255, 160) );
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
                         }
-                        else {
-                            painter->drawPolyline( QPolygonF()
-                                << QPointF( 5, 5 )
-                                << QPointF( 9, 9 )
-                                << QPointF( 13, 5 ) );
 
-                            painter->drawPolyline( QPolygonF()
-                                << QPointF( 5, 9 )
-                                << QPointF( 9, 13 )
-                                << QPointF( 13, 9 ) );
-                        }
+                        painter->drawPolyline( QPolygonF() // first slash
+                            << QPointF( 8, 4 ) // bottom left
+                            << QPointF( 13, 11 ) // top right
+                        );
+
+                        painter->drawPolyline( QPolygonF() // second slash
+                            << QPointF( 13, 4 ) // bottom left
+                            << QPointF( 18, 11 ) // top right
+                        );
                     }
                     break;
 
@@ -796,12 +829,12 @@ namespace Breeze
                         }
                     }
                     if (!macOSBtn || isPressed() || isHovered()) {
-                        if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
-                        {
-                            painter->setPen( Qt::NoPen );
-                            painter->setBrush( backgroundColor );
-                            painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
-                        }
+                        // if( (!macOSBtn  || isPressed()) && backgroundColor.isValid() )
+                        // {
+                        //     painter->setPen( Qt::NoPen );
+                        //     painter->setBrush( backgroundColor );
+                        //     painter->drawEllipse( QRectF( 0, 0, 18, 18 ) );
+                        // }
                         painter->setPen( pen );
                         painter->setBrush( Qt::NoBrush );
 
@@ -811,9 +844,15 @@ namespace Breeze
                             painter->drawLine( QPointF( 4.5, 12 ), QPointF( 13.5, 12 ) );
                         }
                         else {
-                            painter->drawLine( QPointF( 3.5, 5 ), QPointF( 14.5, 5 ) );
-                            painter->drawLine( QPointF( 3.5, 9 ), QPointF( 14.5, 9 ) );
-                            painter->drawLine( QPointF( 3.5, 13 ), QPointF( 14.5, 13 ) );
+                            // OG
+                            // painter->drawLine( QPointF( 3.5, 5 ), QPointF( 14.5, 5 ) );
+                            // painter->drawLine( QPointF( 3.5, 9 ), QPointF( 14.5, 9 ) );
+                            // painter->drawLine( QPointF( 3.5, 13 ), QPointF( 14.5, 13 ) );
+
+                            // New
+                            painter->drawLine( QPointF( 5, 4 ), QPointF( 16, 4 ) );
+                            painter->drawLine( QPointF( 5, 7.5 ), QPointF( 16, 7.5 ) );
+                            painter->drawLine( QPointF( 5, 11 ), QPointF( 16, 11 ) );
                         }
                     }
                     break;
