@@ -685,10 +685,45 @@ namespace Breeze
                         }
                     }
                     if (!macOSBtn || isPressed() || isHovered() || isChecked()) {
-                        if( (!macOSBtn  || isChecked()) && backgroundColor.isValid() )
+                        if( (!macOSBtn) && backgroundColor.isValid() )
                         {
                             // Make the color white if hovered or checked
-                            pen.setColor( QColor(255, 255, 255) );
+                            if (!isHovered() && !isChecked()) {
+                                pen.setColor( QColor(255, 255, 255, 125) );
+                            } else if ( isPressed() && isChecked() ) {
+                                pen.setColor( QColor(255, 255, 255, 160) );
+
+                                painter->setPen( pen );
+                                painter->setBrush( Qt::NoBrush );
+
+                                // Add another slash
+                                painter->drawPolyline( QPolygonF() // first slash
+                                    << QPointF( 3, 11 ) // bottom left
+                                    << QPointF( 8, 4 ) // top right
+                                );
+                            } else if ( isChecked() ) {
+                                pen.setColor( QColor(255, 255, 255) );
+
+                                painter->setPen( pen );
+                                painter->setBrush( Qt::NoBrush );
+
+                                // Add another slash
+                                painter->drawPolyline( QPolygonF() // first slash
+                                    << QPointF( 3, 11 ) // bottom left
+                                    << QPointF( 8, 4 ) // top right
+                                );
+                            } else {
+                                pen.setColor( QColor(255, 255, 255) );
+                            }
+
+                            painter->setPen( pen );
+                            painter->setBrush( Qt::NoBrush );
+
+                            // // Add another slash
+                            // painter->drawPolyline( QPolygonF() // first slash
+                            //     << QPointF( 3, 11 ) // bottom left
+                            //     << QPointF( 8, 4 ) // top right
+                            // );
                         }
                         painter->setPen( pen );
                         painter->setBrush( Qt::NoBrush );

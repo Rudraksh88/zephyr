@@ -534,7 +534,7 @@ namespace Breeze
         {
             button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 10, bHeight + 7))); // bHeight + 5 adds more height to the button
 
-            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-2.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 2.6)); //1.8
+            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-2.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 2.38)); //1.8
             static_cast<Button *>(button.data())->setIconSize(QSize(bWidth, bWidth));
         }
 
@@ -542,7 +542,10 @@ namespace Breeze
         if( !m_leftButtons->buttons().isEmpty() )
         {
             auto button = static_cast<Button *>(m_leftButtons->buttons().front());
-            button->setOffset(QPointF(0, verticalOffset + 1));
+            button->setOffset(QPointF(0, verticalOffset + 2.6));
+
+            // Set the app icon size
+            button->setIconSize(QSize(bWidth - 3, bWidth - 3));
 
             // Right padding of the left button
             button->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 3, bHeight + 7))); // + 3 is the right padding
@@ -565,11 +568,15 @@ namespace Breeze
                 auto button = static_cast<Button *>(m_leftButtons->buttons().front());
                 button->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth + hPadding + 3, bHeight ) ) );
                 button->setFlag( Button::FlagFirstInList );
-                button->setHorizontalOffset( hPadding );
+                button->setHorizontalOffset( hPadding + 3 );
 
                 m_leftButtons->setPos(QPointF(0, vPadding - 1));
 
-            } else m_leftButtons->setPos(QPointF(hPadding + borderLeft(), vPadding));
+            } else m_leftButtons->setPos(QPointF(hPadding + borderLeft() + 3, vPadding));
+
+            auto appbutton = static_cast<Button *>(m_leftButtons->buttons().front());
+            appbutton->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth - 10, bHeight - 10)));
+
 
         }
 
@@ -746,7 +753,7 @@ namespace Breeze
             case InternalSettings::ButtonTiny: return baseSize;
             case InternalSettings::ButtonSmall: return baseSize*1.45;
             default:
-            case InternalSettings::ButtonDefault: return baseSize*1.8; // default 2
+            case InternalSettings::ButtonDefault: return baseSize*1.7; // default 2
             case InternalSettings::ButtonLarge: return baseSize*2.5;
             case InternalSettings::ButtonVeryLarge: return baseSize*3.5;
         }
