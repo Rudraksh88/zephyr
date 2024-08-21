@@ -176,7 +176,7 @@ namespace Breeze
     void Button::drawIcon( QPainter *painter ) const
     {
 
-        painter->setRenderHints( QPainter::Antialiasing );
+        painter->setRenderHints( QPainter::Antialiasing, true );
 
         /*
         scale painter so that its window matches QRect( -1, -1, 20, 20 )
@@ -190,7 +190,7 @@ namespace Breeze
         // painter->translate( 0, 0 );
 
         painter->scale( width/20, width/20 );
-        painter->translate( 3, 3 );
+        painter->translate( 1.6, 1.6 );
 
         // render background
         const QColor backgroundColor( this->backgroundColor() );
@@ -212,7 +212,7 @@ namespace Breeze
         }
 
         // render mark
-        const QColor foregroundColor( this->foregroundColor(inactiveCol) );
+        const QColor foregroundColor( this->foregroundColor( QColor(255, 255, 255, 125) ) );
         if( foregroundColor.isValid() )
         {
 
@@ -231,6 +231,7 @@ namespace Breeze
 
                 case DecorationButtonType::Close:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     if (!d || d->internalSettings()->macOSButtons()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
@@ -273,12 +274,14 @@ namespace Breeze
 
                         if (isHovered()) {
                             pen.setColor( QColor(255, 255, 255, 255) );
+
                             painter->setPen( pen );
                             painter->setBrush( Qt::NoBrush );
                         }
 
                         if (isPressed()) {
                             pen.setColor( QColor(255, 255, 255, 160) );
+
                             painter->setPen( pen );
                             painter->setBrush( Qt::NoBrush );
                         }
@@ -287,15 +290,20 @@ namespace Breeze
 
                         // Use polyline to draw an X
                         painter->drawPolyline(QPolygonF()
-                                              << QPointF(5, 4) << QPointF(13, 12));
+                                              << QPointF(5, 3.5) << QPointF(13, 11.5));
                         painter->drawPolyline(QPolygonF()
-                                                << QPointF(5, 12) << QPointF(13, 4));
+                                                << QPointF(5, 11.5) << QPointF(13, 3.5));
                     }
                     break;
                 }
 
                 case DecorationButtonType::Maximize:
                 {
+                    pen.setWidthF(STROKE_WIDTH);  // Slightly thicker line to reduce artifacting
+                    pen.setCapStyle(Qt::RoundCap);  // Round line ends
+                    pen.setJoinStyle(Qt::RoundJoin);  // Round line joins
+                    painter->setRenderHints( QPainter::Antialiasing, true );
+                    painter->setPen(pen);
                     if (!d || d->internalSettings()->macOSButtons()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
@@ -360,14 +368,35 @@ namespace Breeze
                         // Just draw a square for now for maximize
 
                         // Checked means the window is maximized
+                        // if (isChecked()) {
+                        //     painter->drawPolyline(QPolygonF()
+                        //                           << QPointF(7, 3.5) << QPointF(13.5, 3.5) << QPointF(13.5, 9.5));
+
+
+                        //     painter->drawRect(QRectF(4.0, 6, 7.0, 7.0)); // x,y,w,h
+                        // } else {
+                        //     painter->drawRect(QRectF(5.0, 4, 8.0, 8.0));
+                        // }
+
+                        // backup
+                        // if (isChecked()) {
+                        //     painter->drawPolyline(QPolygonF() << QPointF(7.5, 3) << QPointF(14, 3) << QPointF(14, 9)); // -|
+                        //     painter->drawRect(QRectF(3.5, 6, 6.5, 6.5)); // x,y,w,h //
+                        // } else {
+                        //     painter->drawRect(QRectF(5.0, 3.5, 8.0, 8.0));
+                        // }
+
                         if (isChecked()) {
-                            painter->drawPolyline(QPolygonF()
-                                                  << QPointF(7, 3.5) << QPointF(13.5, 3.5) << QPointF(13.5, 9.5));
+                            // painter->drawPolyline(QPolygonF() << QPointF(7, 3.5) << QPointF(12, 3.5) << QPointF(12, 9)); // -|
+                            // painter->drawRect(QRectF(4, 6, 6, 6)); // x,y,w,h //
 
+                            // Draw an ellipse
+                            // painter->drawEllipse(QRectF(5.0, 3.5, 8.0, 8.0));
 
-                            painter->drawRect(QRectF(4.0, 6, 7.0, 7.0)); // x,y,w,h
+                            // Draw an upside down triangle
+                            painter->drawPolyline(QPolygonF() << QPointF(4, 3.5) << QPointF(13, 3.5) << QPointF(8.5, 11.5) << QPointF(4, 3.5) );
                         } else {
-                            painter->drawRect(QRectF(5.0, 4, 8.0, 8.0));
+                            painter->drawRect(QRectF(5.0, 3.5, 8.0, 8.0));
                         }
                     }
                     break;
@@ -375,6 +404,7 @@ namespace Breeze
 
                 case DecorationButtonType::Minimize:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     if (!d || d->internalSettings()->macOSButtons()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
@@ -425,13 +455,14 @@ namespace Breeze
                         painter->setBrush( Qt::NoBrush );
 
                         // Draw a line at the base of the maximize square
-                        painter->drawLine( QPointF( 6, 8.5 ), QPointF( 15, 8.5 ) );
+                        painter->drawLine( QPointF( 6, 8 ), QPointF( 15, 8 ) );
                     }
                     break;
                 }
 
                 case DecorationButtonType::OnAllDesktops:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     bool macOSBtn(!d || d->internalSettings()->macOSButtons());
                     if (macOSBtn && !isPressed()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
@@ -478,7 +509,7 @@ namespace Breeze
                         }
 
                         // Define the center and sizes for both circles
-                        qreal centerX = 8.0;
+                        qreal centerX = 8.5;
                         qreal centerY = 7.5; // Midpoint between 4 and 11
                         qreal largeCircleSize = 18.0;
                         qreal smallCircleSize = 6.0;
@@ -510,6 +541,7 @@ namespace Breeze
 
                 case DecorationButtonType::Shade:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     bool macOSBtn(!d || d->internalSettings()->macOSButtons());
                     if (macOSBtn && !isPressed()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
@@ -575,6 +607,7 @@ namespace Breeze
 
                 case DecorationButtonType::KeepBelow:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     bool macOSBtn(!d || d->internalSettings()->macOSButtons());
                     if (macOSBtn && !isPressed()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
@@ -678,6 +711,7 @@ namespace Breeze
 
                 case DecorationButtonType::KeepAbove:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     bool macOSBtn(!d || d->internalSettings()->macOSButtons());
                     if (macOSBtn && !isPressed()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
@@ -793,6 +827,7 @@ namespace Breeze
 
                 case DecorationButtonType::ApplicationMenu:
                 {
+                    painter->setRenderHints( QPainter::Antialiasing, true );
                     bool macOSBtn(!d || d->internalSettings()->macOSButtons());
                     if (macOSBtn && !isPressed()) {
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
@@ -933,35 +968,26 @@ namespace Breeze
                 && m_animation->state() != QAbstractAnimation::Running)
             {
                 int v = qGray(inactiveCol.rgb());
-                if (v > 127) v = 255;
-                else v = 255;
-                // col = QColor(v, v, v); previous v = 150
-                col = QColor(v, v, v, 125);
+                if (v > 127) v -= 127;
+                else v += 128;
+                col = QColor(v, v, v);
             }
             else
             {
                 if (d && qGray(d->titleBarColor().rgb()) > 100)
-                    // col = QColor(150, 150, 150);
-
-                    // White color with a bit of transparency
-                    col = QColor(255, 255, 255, 125);
-
+                    col = QColor(250, 250, 250);
                 else
-                    // col = QColor(150, 150, 150);
-                    col = QColor(255, 255, 255, 125);
+                    col = QColor(40, 40, 40);
             }
             return col;
         }
         else if( !d ) {
-            // Make colors white no matter what
-            // return QColor(150, 150, 150);
-            return QColor(255, 255, 255, 125);
+
+            return QColor();
 
         } else if( isPressed() ) {
 
-            // return d->titleBarColor();
-            // return QColor(150, 150, 150);
-            return QColor(255, 255, 255, 100);
+            return d->titleBarColor();
 
         /*} else if( type() == DecorationButtonType::Close && d->internalSettings()->outlineCloseButton() ) {
 
@@ -969,33 +995,20 @@ namespace Breeze
 
         } else if( ( type() == DecorationButtonType::KeepBelow || type() == DecorationButtonType::KeepAbove ) && isChecked() ) {
 
-            // return d->titleBarColor();
-            // return QColor(150, 150, 150);
-            return QColor(255, 255, 255, 125);
+            return d->titleBarColor();
 
         } else if( m_animation->state() == QAbstractAnimation::Running ) {
 
-            // return KColorUtils::mix( d->fontColor(), d->titleBarColor(), m_opacity );
-            // return QColor(150, 150, 150);
-            return QColor(255, 255, 255, 125);
+            return KColorUtils::mix( d->fontColor(), d->titleBarColor(), m_opacity );
 
         } else if( isHovered() ) {
-            // For other buttons, hover is controlled in their respective DecorationButtonType cases
-            // If its a close button, make the color white
-            // if (type() == DecorationButtonType::Close) {
-            //     return QColor(255,255,255);
-            // }
 
-            // return d->titleBarColor();
-            // return QColor(150, 150, 150);
-            return QColor(255, 255, 255, 1);
-
+            return d->titleBarColor();
 
         } else {
 
-            // return d->fontColor();
-            // return QColor(150, 150, 150);
-            return QColor(255, 255, 255, 125);
+            return d->fontColor();
+
         }
 
     }
@@ -1017,39 +1030,39 @@ namespace Breeze
                 if( type() == DecorationButtonType::Close )
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(80, 80, 80);
+                        col = QColor(254, 73, 66);
                     else
-                        col = QColor(80, 80, 80);
+                        col = QColor(240, 77, 80);
                 }
                 else if( type() == DecorationButtonType::Maximize)
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(80, 80, 80);
+                        col = isChecked() ? QColor(0, 188, 154) : QColor(7, 201, 33);
                     else
-                        col = QColor(80, 80, 80);
+                        col = isChecked() ? QColor(0, 188, 154) : QColor(101, 188, 34);
                 }
                 else if( type() == DecorationButtonType::Minimize )
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(80, 80, 80);
+                        col = QColor(233, 160, 13);
                     else
-                        col = QColor(80, 80, 80);
+                        col = QColor(227, 185, 59);
                 }
                 else if( type() == DecorationButtonType::ApplicationMenu ) {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(80, 80, 80);
+                        col = QColor(220, 124, 64);
                     else
-                        col = QColor(80, 80, 80);
+                        col = QColor(240, 139, 96);
                 }
                 else {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(80, 80, 80);
+                        col = QColor(83, 121, 170);
                     else
-                        col = QColor(80, 80, 80);
+                        col = QColor(110, 136, 180);
                 }
                 if (col.isValid())
                     return col;
-                else return KColorUtils::mix( d->titleBarColor(), d->fontColor(), 1 ); // was 0.3
+                else return KColorUtils::mix( d->titleBarColor(), d->fontColor(), 0.3 );
 
             } else if( m_animation->state() == QAbstractAnimation::Running ) {
 
@@ -1057,35 +1070,35 @@ namespace Breeze
                 if( type() == DecorationButtonType::Close )
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(100, 100, 100);
+                        col = QColor(254, 95, 87);
                     else
-                        col = QColor(100, 100, 100);
+                        col = QColor(240, 96, 97);
                 }
                 else if( type() == DecorationButtonType::Maximize)
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(100, 100, 100);
+                        col = isChecked() ? QColor(64, 188, 168) : QColor(39, 201, 63);
                     else
-                        col = QColor(100, 100, 100);
+                        col = isChecked() ? QColor(64, 188, 168) : QColor(116, 188, 64);
                 }
                 else if( type() == DecorationButtonType::Minimize )
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(100, 100, 100);
+                        col = QColor(233, 172, 41);
                     else
-                        col = QColor(100, 100, 100);
+                        col = QColor(227, 191, 78);
                 }
                 else if( type() == DecorationButtonType::ApplicationMenu ) {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(100, 100, 100);
+                        col = QColor(220, 124, 64);
                     else
-                        col = QColor(100, 100, 100);
+                        col = QColor(240, 139, 96);
                 }
                 else {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(100, 100, 100);
+                        col = QColor(98, 141, 200);
                     else
-                        col = QColor(100, 100, 100);
+                        col = QColor(128, 157, 210);
                 }
                 if (col.isValid())
                     return col;
@@ -1103,35 +1116,35 @@ namespace Breeze
                 if( type() == DecorationButtonType::Close )
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(120, 120, 120);
+                        col = QColor(254, 95, 87);
                     else
-                        col = QColor(120, 120, 120);
+                        col = QColor(240, 96, 97);
                 }
                 else if( type() == DecorationButtonType::Maximize)
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(120, 120, 120);
+                        col = isChecked() ? QColor(64, 188, 168) : QColor(39, 201, 63);
                     else
-                        col = QColor(120, 120, 120);
+                        col = isChecked() ? QColor(64, 188, 168) : QColor(116, 188, 64);
                 }
                 else if( type() == DecorationButtonType::Minimize )
                 {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(120, 120, 120);
+                        col = QColor(233, 172, 41);
                     else
-                        col = QColor(120, 120, 120);
+                        col = QColor(227, 191, 78);
                 }
                 else if( type() == DecorationButtonType::ApplicationMenu ) {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(120, 120, 120);
+                        col = QColor(220, 124, 64);
                     else
-                        col = QColor(120, 120, 120);
+                        col = QColor(240, 139, 96);
                 }
                 else {
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(120, 120, 120);
+                        col = QColor(98, 141, 200);
                     else
-                        col = QColor(120, 120, 120);
+                        col = QColor(128, 157, 210);
                 }
                 if (col.isValid())
                     return col;
@@ -1147,17 +1160,14 @@ namespace Breeze
             auto c = d->client();
             if( isPressed() ) {
 
-                // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
-                if( type() == DecorationButtonType::Close ) return QColor(123, 48, 56);
+                if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
                 else
                 {
                     QColor col;
-                    // If the titlebar is light, the button should be dark
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(255, 255, 255, 65); // This is the color of the button when it is pressed
-                    // If the titlebar is dark, the button should be light
+                        col = QColor(0, 0, 0, 190);
                     else
-                        col = QColor(64,64,64); // This is the color of the button when it is pressed
+                        col = QColor(255, 255, 255, 210);
                     return col;
                 }
 
@@ -1165,10 +1175,9 @@ namespace Breeze
 
                     QColor col;
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(255, 255, 255, 125);
+                        col = QColor(0, 0, 0, 165);
                     else
-                        // col = QColor(255, 255, 255, 125);
-                        col = QColor(64,64,64);
+                        col = QColor(255, 255, 255, 180);
                     return col;
 
             } else if( m_animation->state() == QAbstractAnimation::Running ) {
@@ -1176,8 +1185,7 @@ namespace Breeze
                 if( type() == DecorationButtonType::Close )
                 {
 
-                    // QColor color( c->color( ColorGroup::Warning, ColorRole::Foreground ) );
-                    QColor color(123, 48, 56);
+                    QColor color( c->color( ColorGroup::Warning, ColorRole::Foreground ).lighter() );
                     color.setAlpha( color.alpha()*m_opacity );
                     return color;
 
@@ -1187,7 +1195,7 @@ namespace Breeze
                     if (qGray(d->titleBarColor().rgb()) > 100)
                         col = QColor(0, 0, 0, 165);
                     else
-                        col = QColor(64,64,64);
+                        col = QColor(255, 255, 255, 180);
                     col.setAlpha( col.alpha()*m_opacity );
                     return col;
 
@@ -1195,20 +1203,15 @@ namespace Breeze
 
             } else if( isHovered() ) {
 
-                // if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground );
-                if( type() == DecorationButtonType::Close ) return QColor(123, 48, 56);
+                if( type() == DecorationButtonType::Close ) return c->color( ColorGroup::Warning, ColorRole::Foreground ).lighter();
                 else
                 {
 
                     QColor col;
-
-                    // If the titlebar is light, the button should be dark
                     if (qGray(d->titleBarColor().rgb()) > 100)
-                        col = QColor(0, 0, 0, 165); // This is the color of the button when it is hovered
-
-                    // If the titlebar is dark, the button should be light
+                        col = QColor(0, 0, 0, 165);
                     else
-                        col = QColor(64,64,64); // This is the color of the button when it is hovered
+                        col = QColor(255, 255, 255, 180);
                     return col;
 
                 }
@@ -1216,7 +1219,6 @@ namespace Breeze
             } else {
 
                 return QColor();
-                // return QColor(64,64,64); // Gives permanent color to the button
 
             }
         }

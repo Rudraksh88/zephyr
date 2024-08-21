@@ -352,7 +352,7 @@ namespace Breeze
             top += baseSize*Metrics::TitleBar_BottomMargin + (c->isShaded() ? 0 : 1);
 
             // padding above
-            top += baseSize*Metrics::TitleBar_TopMargin - 1; // Titlebar vertical padding
+            top += baseSize*Metrics::TitleBar_TopMargin - 1;
         }
 
         setBorders(QMargins(left, top, right, bottom));
@@ -523,32 +523,15 @@ namespace Breeze
         const auto s = settings();
 
         // adjust button position
-        const int bHeight = buttonHeight(); //captionHeight() + (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0);
+        const int bHeight = captionHeight() + (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0);
         const int bWidth = buttonHeight();
-        // const int verticalOffset = (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0) + (captionHeight()-buttonHeight())/2; // Default
-        const int verticalOffset = (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin : 0) + (captionHeight()-buttonHeight())/2;
-        // const int verticalOffset = (isTopEdge() ? Metrics::TitleBar_TopMargin:0) + (captionHeight()-buttonHeight())/2;
-
+        const int verticalOffset = (isTopEdge() ? s->smallSpacing()*Metrics::TitleBar_TopMargin:0) + (captionHeight()-buttonHeight())/2;
         const auto buttonList = m_leftButtons->buttons() + m_rightButtons->buttons();
         for (const QPointer<KDecoration2::DecorationButton> &button : buttonList)
         {
-            button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 10, bHeight + 7))); // bHeight + 5 adds more height to the button
-
-            isTopEdge() ? static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset-2.5)) : static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset + 2.38)); //1.8
+            button.data()->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth, bHeight)));
+            static_cast<Button *>(button.data())->setOffset(QPointF(0, verticalOffset));
             static_cast<Button *>(button.data())->setIconSize(QSize(bWidth, bWidth));
-        }
-
-        // Add vertical spacing to the icon on the left
-        if( !m_leftButtons->buttons().isEmpty() )
-        {
-            auto button = static_cast<Button *>(m_leftButtons->buttons().front());
-            button->setOffset(QPointF(0, verticalOffset + 2.6));
-
-            // Set the app icon size
-            button->setIconSize(QSize(bWidth - 3, bWidth - 3));
-
-            // Right padding of the left button
-            button->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth + 3, bHeight + 7))); // + 3 is the right padding
         }
 
         // left buttons
@@ -559,24 +542,23 @@ namespace Breeze
             m_leftButtons->setSpacing(m_internalSettings->buttonSpacing());
 
             // padding
-            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin - 1;
-            const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin;
-
+            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin;
+            const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin + 3; // +3 to shift the buttons a bit to the right
             if( isLeftEdge() )
             {
                 // add offsets on the side buttons, to preserve padding, but satisfy Fitts law
                 auto button = static_cast<Button *>(m_leftButtons->buttons().front());
-                button->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth + hPadding + 3, bHeight ) ) );
+                button->setGeometry( QRectF( QPoint( 0, 0 ), QSizeF( bWidth + hPadding, bHeight ) ) );
                 button->setFlag( Button::FlagFirstInList );
-                button->setHorizontalOffset( hPadding + 3 );
+                button->setHorizontalOffset( hPadding );
 
-                m_leftButtons->setPos(QPointF(0, vPadding - 1));
+                m_leftButtons->setPos(QPointF(0, vPadding));
 
-            } else m_leftButtons->setPos(QPointF(hPadding + borderLeft() + 3, vPadding));
+            } else m_leftButtons->setPos(QPointF(hPadding + borderLeft(), vPadding));
 
+            // Make the first button smaller (for the appmenu)
             auto appbutton = static_cast<Button *>(m_leftButtons->buttons().front());
-            appbutton->setGeometry(QRectF(QPoint(0, 0), QSizeF(bWidth - 10, bHeight - 10)));
-
+            appbutton->setIconSize(QSize(bWidth - 3, bWidth));
 
         }
 
@@ -588,16 +570,12 @@ namespace Breeze
             m_rightButtons->setSpacing(m_internalSettings->buttonSpacing());
 
             // padding
-            // const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin; // Default
-            // const int vPadding = isTopEdge() ? 0 : Metrics::TitleBar_TopMargin + 1;
-            const int vPadding = isTopEdge() ? 0 : Metrics::TitleBar_TopMargin;
-
-            // const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin;
-            const int hPadding = Metrics::TitleBar_SideMargin;
+            const int vPadding = isTopEdge() ? 0 : s->smallSpacing()*Metrics::TitleBar_TopMargin;
+            const int hPadding = s->smallSpacing()*Metrics::TitleBar_SideMargin + 6; // +6 to shift the buttons a bit to the left (add spacing to the right)
             if( isRightEdge() )
             {
                 auto button = static_cast<Button *>(m_rightButtons->buttons().back());
-                button->setGeometry(QRectF(QPoint(0, 0), QSizeF( bWidth + hPadding + 10, bHeight + 10)));
+                button->setGeometry(QRectF(QPoint(0, 0), QSizeF( bWidth + hPadding, bHeight)));
                 button->setFlag(Button::FlagLastInList);
 
                 m_rightButtons->setPos(QPointF(size().width() - m_rightButtons->geometry().width(), vPadding));
@@ -687,9 +665,7 @@ namespace Breeze
         }
         else
         {
-            // QColor titleBarColor(this->titleBarColor());
             // Make the titlebar color #1e1e20ff for active and #1e1e20aa for inactive
-            // QColor titleBarColor(c->isActive() ? QColor(30, 30, 32, 255) : QColor(30, 30, 32, 170));
             QColor titleBarColor(c->isActive() ? QColor(26, 26, 26, 255) : QColor(26, 26, 26, 170));
 
             titleBarColor.setAlpha(titleBarAlpha());
@@ -732,9 +708,7 @@ namespace Breeze
         // KDE needs this FIXME: Why?
         QFontDatabase fd; f.setStyleName(fd.styleString(f));
         painter->setFont(f);
-        painter->setPen( fontColor() ); // This sets the color for window title
-        // painter->setPen( QColor(255, 255, 255, 150) ); // A more lighter color for window title
-
+        painter->setPen( fontColor() );
         const auto cR = captionRect();
         const QString caption = painter->fontMetrics().elidedText(c->caption(), Qt::ElideMiddle, cR.first.width());
         painter->drawText(cR.first, cR.second | Qt::TextSingleLine, caption);
@@ -751,9 +725,9 @@ namespace Breeze
         switch( m_internalSettings->buttonSize() )
         {
             case InternalSettings::ButtonTiny: return baseSize;
-            case InternalSettings::ButtonSmall: return baseSize*1.45;
+            case InternalSettings::ButtonSmall: return baseSize*1.5;
             default:
-            case InternalSettings::ButtonDefault: return baseSize*1.7; // default 2
+            case InternalSettings::ButtonDefault: return baseSize*1.7;
             case InternalSettings::ButtonLarge: return baseSize*2.5;
             case InternalSettings::ButtonVeryLarge: return baseSize*3.5;
         }
