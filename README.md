@@ -1,3 +1,6 @@
+> [!NOTE]
+> Archived due to new KDecoration3 API that introduced breaking changes. Instead, use my fork of Sierra Breeze Enhanced, which has the same style baked in.
+
 # Zephyr
 
 ## Overview
